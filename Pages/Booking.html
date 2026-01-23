@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please Enter Your Details</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <br>
+
+        <!-- ✅ Added fieldset with legend -->
+        <fieldset>
+            <legend>Select your hobbies</legend>
+
+            <!-- ✅ Checkbox inputs -->
+            <input type="checkbox" id="reading" name="hobby" value="Reading">
+            <label for="reading">Reading</label>
+            <br>
+
+            <input type="checkbox" id="gaming" name="hobby" value="Gaming">
+            <label for="gaming">Gaming</label>
+        </fieldset>
+
+        <br>
+
+        <!-- ✅ Added second fieldset with legend -->
+        <fieldset>
+            <legend>Select your gender</legend>
+
+            <!-- ✅ Radio inputs with SAME name -->
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <br>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <br>
+
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
