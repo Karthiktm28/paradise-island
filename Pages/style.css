@@ -1,21 +1,44 @@
 h2{
     color: brown ;
 }
+
+
 #div1{
+    text-align: center;
     width: 90%;
     height: 100%;
     background-color: seashell;
-    border: 5px rgb(27, 100, 129) solid;
+    
     margin: auto;
+    box-sizing: content-box;
     /* margin-top: 20px;*/
 }
+
 #PARA{
     background-color: antiquewhite;
     border: 5px brown solid;
     padding: 20px ;
-    
+    box-sizing: border-box;
 
 }
+#inline1{
+    background-color: aqua;
+    display: inline-block;
+    width: 45%;
+}
+#inline2{
+    background-color: aquamarine;
+    display: inline-block;
+    width: 45%;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.list1{
+    list-style: armenian inside ;
 
+}
+.list2{
+    list-style-type: decimal-leading-zero;
 
+}
 
