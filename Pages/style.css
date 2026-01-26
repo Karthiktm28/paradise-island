@@ -41,4 +41,22 @@ h2{
     list-style-type: decimal-leading-zero;
 
 }
-
+table,
+th,
+td{
+    border: 2px solid blue;
+}
+table{
+    border-collapse: collapse;
+    width: 50%;
+    background-color: bisque;
+    text-align: center;
+}
+th{
+    height: 40px;
+}
+a{
+    outline: 1px solid brown;
+    padding: 5px;
+    text-decoration: none;
+}
