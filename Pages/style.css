@@ -59,4 +59,51 @@ a{
     outline: 1px solid brown;
     padding: 5px;
     text-decoration: none;
+    background-color: lightblue;
+}
+h2::after{
+    content: "⟫";
+}
+button {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  color: white;
+}
+
+button:hover {
+  background: linear-gradient(to right, #0056b3, #0096c7);
+}
+#inline1{
+    background: linear-gradient(to bottom, #e0ffff, #b2ebf2);
+    display: inline-block;
+    width: 45%;
+}
+
+#inline2{
+    background: linear-gradient(to bottom, #e0fff5, #a7ffeb);
+    display: inline-block;
+    width: 45%;
+    margin-left: 20px;
+    vertical-align: top;
+}
+#div1{
+    text-align: center;
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(to right, #fff5ee, #f0fff0);
+    margin: auto;
+    box-sizing: content-box;
+}
+#PARA{
+    background: linear-gradient(to right, #faebd7, #ffe4c4);
+    border: 5px brown solid;
+    padding: 20px;
+    box-sizing: border-box;
+}
+th{
+    height: 40px;
+    background: linear-gradient(to right, #00897b, #26a69a);
+    color: white;
+}
+a:hover{
+    background: linear-gradient(to right, #add8e6, #87cefa);
 }
