@@ -107,3 +107,14 @@ th{
 a:hover{
     background: linear-gradient(to right, #add8e6, #87cefa);
 }
+
+img {
+   margin-bottom: 10px;
+   border: 10px solid lightseagreen;
+   object-fit: cover;
+}
+#flex1{
+    display: flex;
+    flex-wrap: wrap;
+    height: 20px;
+}
