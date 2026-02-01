@@ -116,5 +116,60 @@ img {
 #flex1{
     display: flex;
     flex-wrap: wrap;
-    height: 20px;
+}
+body {
+  background: linear-gradient(
+    to bottom,
+    #f0fff0,
+    #e0ffff,
+    #f5fffa
+  );
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    #f0fff0,
+    #e0ffff,
+    #f5fffa
+  );
+  margin: 0;
+}
+#flex1 {
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+  gap: 10px;
+  margin: 20px 0;
+}
+#flex1 {
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+#info-flex {
+  display: flex;
+   gap: 20px;
+  flex-wrap: wrap;
+}
+
+#inline1 {
+  flex-grow: 1;   
+}
+
+#inline2 {
+  flex-grow: 2;   
+}
+#info-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#inline1 {
+  flex: 1 1 40%;
+}
+
+#inline2 {
+  flex: 2 1 60%;
 }
