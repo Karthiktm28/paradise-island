@@ -268,3 +268,40 @@ td {
     text-align: center;
     background: #ffe5c4;
 }
+a[href="#top"] {
+    display: block;
+    width: 40px;
+    margin-left: 0;
+    margin-right: auto;
+}
+/*TOP TWO LINKS*/
+#div1 a {
+    display: inline;
+    border: 2px solid #0e6b6b;        
+    padding: 6px 18px;
+    background: #e0f7f5;              
+    color: #064d4d;                   
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+#div1 a:hover {
+    background: #0e6b6b;
+    color: white;
+}
+#flex1 a {
+    border: 1px solid #0e6b6b;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #064d4d;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+
+#flex1 a:hover {
+    background: #0e6b6b;
+    color: white;
+}
+
+
