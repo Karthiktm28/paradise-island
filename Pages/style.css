@@ -338,5 +338,68 @@ a[href="#top"] {
     background: #0e6b6b;
     color: white;
 }
+#div1 {
+  background: url('../Multimedia/1416023.jpg');
+  background-size: cover;
+  height: 360px;
+  text-align: center;
+  padding-top: 120px;
+  color: white;
+}
 
+/* ===== HERO SECTION (using your existing id div1) ===== */
+
+#div1 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('../Multimedia/1416023.jpg');
+  background-size: cover;
+  height: 360px;
+  text-align: center;
+  padding-top: 120px;
+  color: white;
+}
+
+/* Title */
+#div1 h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 6px black;
+  font-size: 38px;
+}
+
+
+#div1 a {
+  background: #0a6fa3;        /* ocean blue */
+  color: white;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 25px;
+  margin: 8px;
+  display: inline-block;
+  border: 2px solid white;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+#div1 a:hover {
+  background: #ffffff;
+  color: #0a6fa3;
+}
+
+#flex1 {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#flex1 a {
+  text-decoration: none;
+  font-weight: bold;
+  color: crimson;
+}
+
+h2 {
+  color: #0a6fa3;
+  font-family: Arial;
+}
 
