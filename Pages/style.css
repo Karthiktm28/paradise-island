@@ -347,7 +347,7 @@ a[href="#top"] {
   color: white;
 }
 
-/* ===== HERO SECTION (using your existing id div1) ===== */
+/* = HERO SECTION (using your existing id div1) =*/
 
 #div1 {
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
@@ -402,4 +402,12 @@ h2 {
   color: #0a6fa3;
   font-family: Arial;
 }
+#footer{
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 
