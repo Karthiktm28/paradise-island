@@ -409,5 +409,22 @@ img {
   max-width: 100%;
   height: auto;
 }
+@media screen and (max-width: 768px) {
+
+  #div1 {
+    height: 260px;
+    padding-top: 60px;
+  }
+
+  #div1 h1 {
+    font-size: 22px;
+  }
+
+  #div1 a {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+}
 
 
