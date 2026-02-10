@@ -479,3 +479,18 @@ table {
   }
 
 }
+@media screen and (max-width: 480px) {
+
+  #div1 h1 {
+    font-size: 18px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+}
