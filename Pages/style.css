@@ -442,5 +442,40 @@ table {
   overflow-x: auto;
   display: block;
 }
+@media screen and (max-width: 768px) {
 
+  /* HERO SECTION - your existing id */
+  #div1 {
+    height: 250px;
+    padding-top: 60px;
+  }
 
+  #div1 h1 {
+    font-size: 22px;
+  }
+
+  /* Stack your buttons vertically */
+  #div1 a {
+    display: block;
+    width: 85%;
+    margin: 8px auto;
+    text-align: center;
+  }
+
+  /* FLEX MENU */
+  #flex1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #flex1 a {
+    margin: 6px 0;
+  }
+
+  /* IMAGES */
+  img {
+    width: 100% !important;
+    height: auto;
+  }
+
+}
