@@ -30,6 +30,13 @@ img {
   height: auto;
   object-fit: cover;
 }
+img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
 
 /* 3. NAVBAR */
 .navbar {
@@ -149,7 +156,7 @@ td {
 }
 
 /* 8. FOOTER */
-.footer {
+#footer {
   background: var(--dark);
   color: white;
   padding: 20px;
