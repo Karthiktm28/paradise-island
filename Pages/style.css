@@ -1,6 +1,4 @@
-/* =========================================
-   1. ROOT VARIABLES
-========================================= */
+/* 1. ROOT VARIABLES */
 :root {
   --main: #008cba;
   --dark: #023047;
@@ -8,9 +6,7 @@
   --ocean: #0a6fa3;
 }
 
-/* =========================================
-   2. GLOBAL STYLES
-========================================= */
+/* 2. GLOBAL STYLES */
 body {
   margin: 20px;
   font-family: Arial;
@@ -35,9 +31,7 @@ img {
   object-fit: cover;
 }
 
-/* =========================================
-   3. NAVBAR
-========================================= */
+/* 3. NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -56,9 +50,7 @@ img {
   color: var(--main);
 }
 
-/* =========================================
-   4. HERO SECTION (#div1)
-========================================= */
+/* 4. HERO SECTION (#div1) */
 #div1 {
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
               url('../Multimedia/1416023.jpg');
@@ -92,9 +84,7 @@ img {
   color: var(--ocean);
 }
 
-/* =========================================
-   5. FLEX NAVIGATION (#flex1)
-========================================= */
+/* 5. FLEX NAVIGATION (#flex1) */
 #flex1 {
   display: flex;
   gap: 20px;
@@ -118,9 +108,7 @@ img {
   color: white;
 }
 
-/* =========================================
-   6. INFO SECTION
-========================================= */
+/* 6. INFO SECTION */
 #info-flex {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -138,9 +126,7 @@ img {
   background: linear-gradient(to bottom,#e0fff5,#a7ffeb);
 }
 
-/* =========================================
-   7. TABLE / EXPENSE PAGE
-========================================= */
+/* 7. TABLE / EXPENSE PAGE */
 table {
   border: 3px solid blue;
   border-collapse: collapse;
@@ -162,9 +148,7 @@ td {
   background: #ffe5c4;
 }
 
-/* =========================================
-   8. FOOTER
-========================================= */
+/* 8. FOOTER */
 .footer {
   background: var(--dark);
   color: white;
@@ -173,9 +157,7 @@ td {
   margin-top: 40px;
 }
 
-/* =========================================
-   9. MEDIA QUERIES
-========================================= */
+/* 9. MEDIA QUERIES */
 
 /* Tablet */
 @media screen and (max-width: 768px) {
