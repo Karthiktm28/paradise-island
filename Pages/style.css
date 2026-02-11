@@ -1,10 +1,43 @@
+/* =========================================
+   1. ROOT VARIABLES
+========================================= */
 :root {
   --main: #008cba;
   --dark: #023047;
   --light: #f1f1f1;
+  --ocean: #0a6fa3;
 }
 
-/* NAVBAR */
+/* =========================================
+   2. GLOBAL STYLES
+========================================= */
+body {
+  margin: 20px;
+  font-family: Arial;
+  background: linear-gradient(to bottom,#f0fff0,#e0ffff,#f5fffa);
+}
+
+h2 {
+  color: #0a6fa3;
+  font-family: Arial;
+}
+
+h2::after {
+  content: "⟫";
+}
+
+img {
+  display: block;
+  margin: auto;
+  border: 4px solid teal;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* =========================================
+   3. NAVBAR
+========================================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -23,7 +56,115 @@
   color: var(--main);
 }
 
-/* FOOTER */
+/* =========================================
+   4. HERO SECTION (#div1)
+========================================= */
+#div1 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('../Multimedia/1416023.jpg');
+
+  background-size: cover;
+  height: 360px;
+  text-align: center;
+  padding-top: 120px;
+  color: white;
+}
+
+#div1 h1 {
+  text-shadow: 2px 2px 6px black;
+  font-size: 38px;
+}
+
+#div1 a {
+  background: var(--ocean);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  margin: 8px;
+  display: inline-block;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+#div1 a:hover {
+  background: white;
+  color: var(--ocean);
+}
+
+/* =========================================
+   5. FLEX NAVIGATION (#flex1)
+========================================= */
+#flex1 {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#flex1 a {
+  border: 1px solid #0e6b6b;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #064d4d;
+  background: #ffffff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+#flex1 a:hover {
+  background: #0e6b6b;
+  color: white;
+}
+
+/* =========================================
+   6. INFO SECTION
+========================================= */
+#info-flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 10px;
+}
+
+#inline1 {
+  flex: 1 1 40%;
+  background: linear-gradient(to bottom,#e0ffff,#b2ebf2);
+}
+
+#inline2 {
+  flex: 2 1 60%;
+  background: linear-gradient(to bottom,#e0fff5,#a7ffeb);
+}
+
+/* =========================================
+   7. TABLE / EXPENSE PAGE
+========================================= */
+table {
+  border: 3px solid blue;
+  border-collapse: collapse;
+  width: 600px;
+  background: bisque;
+  text-align: center;
+}
+
+th {
+  background: teal;
+  color: white;
+  padding: 10px;
+  height: 40px;
+}
+
+td {
+  border: 2px solid blue;
+  padding: 8px;
+  background: #ffe5c4;
+}
+
+/* =========================================
+   8. FOOTER
+========================================= */
 .footer {
   background: var(--dark);
   color: white;
@@ -32,383 +173,11 @@
   margin-top: 40px;
 }
 
+/* =========================================
+   9. MEDIA QUERIES
+========================================= */
 
-h2{
-    color: brown ;
-}
-
-
-#div1{
-    text-align: center;
-    width: 90%;
-    height: 100%;
-    background-color: seashell;
-    
-    margin: auto;
-    box-sizing: content-box;
-    /* margin-top: 20px;*/
-}
-
-#PARA{
-    background-color: antiquewhite;
-    border: 5px brown solid;
-    padding: 20px ;
-    box-sizing: border-box;
-
-}
-#inline1{
-    background-color: aqua;
-    display: inline-block;
-    width: 45%;
-}
-#inline2{
-    background-color: aquamarine;
-    display: inline-block;
-    width: 45%;
-    margin-left: 20px;
-    vertical-align: top;
-}
-.list1{
-    list-style: armenian inside ;
-
-}
-.list2{
-    list-style-type: decimal-leading-zero;
-
-}
-table,
-th,
-td{
-    border: 2px solid blue;
-}
-table{
-    border-collapse: collapse;
-    width: 50%;
-    background-color: bisque;
-    text-align: center;
-}
-th{
-    height: 40px;
-}
-a{
-    outline: 1px solid brown;
-    padding: 5px;
-    text-decoration: none;
-    background-color: lightblue;
-}
-h2::after{
-    content: "⟫";
-}
-button {
-  background: linear-gradient(to right, #007bff, #00c6ff);
-  color: white;
-}
-
-button:hover {
-  background: linear-gradient(to right, #0056b3, #0096c7);
-}
-#inline1{
-    background: linear-gradient(to bottom, #e0ffff, #b2ebf2);
-    display: inline-block;
-    width: 45%;
-}
-
-#inline2{
-    background: linear-gradient(to bottom, #e0fff5, #a7ffeb);
-    display: inline-block;
-    width: 45%;
-    margin-left: 20px;
-    vertical-align: top;
-}
-#div1{
-    text-align: center;
-    width: 90%;
-    height: 100%;
-    background: linear-gradient(to right, #fff5ee, #f0fff0);
-    margin: auto;
-    box-sizing: content-box;
-}
-#PARA{
-    background: linear-gradient(to right, #faebd7, #ffe4c4);
-    border: 5px brown solid;
-    padding: 20px;
-    box-sizing: border-box;
-}
-th{
-    height: 40px;
-    background: linear-gradient(to right, #00897b, #26a69a);
-    color: white;
-}
-a:hover{
-    background: linear-gradient(to right, #add8e6, #87cefa);
-}
-
-img {
-   margin-bottom: 10px;
-   border: 10px solid lightseagreen;
-   object-fit: cover;
-}
-#flex1{
-    display: flex;
-    flex-wrap: wrap;
-}
-body {
-  background: linear-gradient(
-    to bottom,
-    #f0fff0,
-    #e0ffff,
-    #f5fffa
-  );
-  margin: 0;
-}
-
-body {
-  background: linear-gradient(
-    to bottom,
-    #f0fff0,
-    #e0ffff,
-    #f5fffa
-  );
-  margin: 0;
-}
-#flex1 {
-  display: flex;
-  align-items: center;       
-  justify-content: center;   
-  gap: 10px;
-  margin: 20px 0;
-}
-#flex1 {
-  flex-wrap: wrap;
-  align-content: space-around;
-}
-#info-flex {
-  display: flex;
-   gap: 20px;
-  flex-wrap: wrap;
-}
-
-#inline1 {
-  flex-grow: 1;   
-}
-
-#inline2 {
-  flex-grow: 2;   
-}
-#info-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-#inline1 {
-  flex: 1 1 40%;
-}
-
-#inline2 {
-  flex: 2 1 60%;
-}
-/* =Main Home page= */
-
-body {
-    margin: 20px;
-    font-family: Arial;
-    background: #eef9ee;
-}
-
-/* ===== TOP HEADER AREA ===== */
-
-#div1 {
-    display: grid;
-    grid-template-columns: auto;
-    text-align: center;
-    padding: 10px;
-    background: #f5f5f5;
-}
-
-
-#div1 a {
-    display: inline;
-    border: 1px solid red;
-    padding: 5px 15px;
-    background: lightblue;
-    margin: 5px;
-    text-decoration: none;
-}
-
-/* ===== IMAGE SECTION ===== */
-
-img {
-    display: block;
-    margin: auto;
-    border: 4px solid teal;
-}
-
-/* ===== NAVIGATION LINKS ROW ===== */
-
-#flex1 {
-    display: grid;
-    grid-template-columns: repeat(8, auto);
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-#flex1 a {
-    border: 1px solid crimson;
-    padding: 6px;
-    text-decoration: none;
-    color: darkblue;
-}
-
-/* ===== TWO PARAGRAPH SECTION ===== */
-
-#info-flex {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 10px;
-}
-
-/* = EXPENSE PAGE GRID = */
-
-body {
-    background: #eef9ee;
-}
-
-/* Page layout */
-.expense-container {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-/* Table styling */
-table {
-    border: 3px solid blue;
-    border-collapse: collapse;
-    width: 600px;
-}
-
-th {
-    background: teal;
-    color: white;
-    padding: 10px;
-}
-
-td {
-    border: 2px solid blue;
-    padding: 8px;
-    text-align: center;
-    background: #ffe5c4;
-}
-a[href="#top"] {
-    display: block;
-    width: 40px;
-    margin-left: 0;
-    margin-right: auto;
-}
-/*TOP TWO LINKS*/
-#div1 a {
-    display: inline;
-    border: 2px solid #0e6b6b;        
-    padding: 6px 18px;
-    background: #e0f7f5;              
-    color: #064d4d;                   
-    margin: 5px;
-    text-decoration: none;
-    border-radius: 6px;
-}
-#div1 a:hover {
-    background: #0e6b6b;
-    color: white;
-}
-#flex1 a {
-    border: 1px solid #0e6b6b;
-    padding: 6px 12px;
-    text-decoration: none;
-    color: #064d4d;
-    background: #ffffff;
-    border-radius: 5px;
-}
-
-
-#flex1 a:hover {
-    background: #0e6b6b;
-    color: white;
-}
-#div1 {
-  background: url('../Multimedia/1416023.jpg');
-  background-size: cover;
-  height: 360px;
-  text-align: center;
-  padding-top: 120px;
-  color: white;
-}
-
-/* = HERO SECTION (using your existing id div1) =*/
-
-#div1 {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url('../Multimedia/1416023.jpg');
-  background-size: cover;
-  height: 360px;
-  text-align: center;
-  padding-top: 120px;
-  color: white;
-}
-
-/* Title */
-#div1 h1 {
-  color: #ffffff;
-  text-shadow: 2px 2px 6px black;
-  font-size: 38px;
-}
-
-
-#div1 a {
-  background: #0a6fa3;        /* ocean blue */
-  color: white;
-  padding: 10px 18px;
-  text-decoration: none;
-  border-radius: 25px;
-  margin: 8px;
-  display: inline-block;
-  border: 2px solid white;
-  transition: 0.3s;
-}
-
-/* Hover effect */
-#div1 a:hover {
-  background: #ffffff;
-  color: #0a6fa3;
-}
-
-#flex1 {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-#flex1 a {
-  text-decoration: none;
-  font-weight: bold;
-  color: crimson;
-}
-
-h2 {
-  color: #0a6fa3;
-  font-family: Arial;
-}
-#footer{
-  text-align: center;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
+/* Tablet */
 @media screen and (max-width: 768px) {
 
   #div1 {
@@ -422,63 +191,27 @@ img {
 
   #div1 a {
     display: block;
-    width: 80%;
-    margin: 10px auto;
-  }
-}
-@media screen and (max-width: 768px) {
-
-  #flex1 {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #flex1 a {
-    margin: 5px 0;
-  }
-}
-table {
-  width: 100%;
-  overflow-x: auto;
-  display: block;
-}
-@media screen and (max-width: 768px) {
-
-  /* HERO SECTION - your existing id */
-  #div1 {
-    height: 250px;
-    padding-top: 60px;
-  }
-
-  #div1 h1 {
-    font-size: 22px;
-  }
-
-  /* Stack your buttons vertically */
-  #div1 a {
-    display: block;
     width: 85%;
     margin: 8px auto;
-    text-align: center;
   }
 
-  /* FLEX MENU */
   #flex1 {
     flex-direction: column;
     align-items: center;
   }
 
-  #flex1 a {
-    margin: 6px 0;
+  table {
+    display: block;
+    overflow-x: auto;
   }
 
-  /* IMAGES */
-  img {
-    width: 100% !important;
-    height: auto;
+  th, td {
+    font-size: 14px;
+    padding: 6px;
   }
-
 }
+
+/* Phone */
 @media screen and (max-width: 480px) {
 
   #div1 h1 {
@@ -492,18 +225,4 @@ table {
   h2 {
     font-size: 18px;
   }
-
-}
-@media screen and (max-width: 768px) {
-
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-
-  th, td {
-    padding: 6px;
-    font-size: 14px;
-  }
-
 }
