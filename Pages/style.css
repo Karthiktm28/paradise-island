@@ -271,3 +271,58 @@ img {
     transform: translateX(0);
   }
 }
+/* 11 BOOKING PAGE THEME */
+.booking-page {
+  background: linear-gradient(to bottom right,#dff6ff,#f0fbff,#ffffff);
+}
+
+/* card styling */
+.booking-page .card {
+  border: none;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-page .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* headings */
+.booking-page h1 {
+  color: #0a6fa3;
+  font-weight: bold;
+}
+
+/* labels */
+.booking-page label {
+  font-weight: 500;
+  color: #044a6b;
+}
+
+/* input focus glow */
+.booking-page .form-control:focus {
+  border-color: #0a6fa3;
+  box-shadow: 0 0 8px rgba(10,111,163,0.4);
+}
+
+/* checkboxes & radios accent color */
+.booking-page .form-check-input:checked {
+  background-color: #0a6fa3;
+  border-color: #0a6fa3;
+}
+
+/* submit button */
+.booking-page .btn-primary {
+  background: linear-gradient(45deg,#0a6fa3,#12a4d9);
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.booking-page .btn-primary:hover {
+  background: linear-gradient(45deg,#095c88,#0a8fc2);
+  transform: scale(1.02);
+}
