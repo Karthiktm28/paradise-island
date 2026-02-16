@@ -348,6 +348,15 @@ img {
   background: linear-gradient(45deg,#095c88,#0a8fc2);
   transform: scale(1.02);
 }
+.form-control:valid {
+  border-color: #28a745;
+}
+
+.form-control:invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 5px rgba(220,53,69,0.5);
+}
+
 /* ===== CONTENT SECTIONS ===== */
 .section-card {
   background: white;
