@@ -326,3 +326,17 @@ img {
   background: linear-gradient(45deg,#095c88,#0a8fc2);
   transform: scale(1.02);
 }
+/* ===== CONTENT SECTIONS ===== */
+.section-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 25px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
