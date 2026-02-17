@@ -156,13 +156,20 @@ td {
 }
 
 /* 8. FOOTER */
-#footer {
-  background: var(--dark);
+.footer-pro {
+  background: #023047;
   color: white;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 }
+
+.footer-pro a {
+  color: #90e0ef;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
 
 /* 9. MEDIA QUERIES */
 
@@ -357,7 +364,7 @@ img {
   box-shadow: 0 0 5px rgba(220,53,69,0.5);
 }
 
-/* ===== CONTENT SECTIONS ===== */
+/* CONTENT SECTIONS */
 .section-card {
   background: white;
   border-radius: 16px;
@@ -371,7 +378,7 @@ img {
   transform: translateY(-5px);
   box-shadow: 0 18px 35px rgba(0,0,0,0.15);
 }
-/* ===== DESTINATION CARDS ===== */
+/* DESTINATION CARDS  */
 
 .card-grid {
   display: grid;
