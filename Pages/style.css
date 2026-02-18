@@ -433,3 +433,6 @@ img {
   font-weight: bold;
   color: #0a6fa3;
 }
+html {
+  scroll-behavior: smooth;
+}
