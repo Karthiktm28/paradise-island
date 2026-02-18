@@ -436,3 +436,16 @@ img {
 html {
   scroll-behavior: smooth;
 }
+/* Fixed Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+/* Offset scrolling for fixed navbar */
+section, h2, h1 {
+  scroll-margin-top: 100px;
+}
+
