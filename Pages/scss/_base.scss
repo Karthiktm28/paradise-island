@@ -1,0 +1,16 @@
+@use "variables" as v;
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef9ee;
+}
+
+h1, h2, h3 {
+  color: v.$primary;
+}
+
+a {
+  text-decoration: none;
+  transition: v.$transition;
+}
