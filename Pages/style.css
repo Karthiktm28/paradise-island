@@ -1,16 +1,44 @@
-body {
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+/* Page spacing */
+body {
   font-family: Arial, Helvetica, sans-serif;
   background: #eef9ee;
+  line-height: 1.6;
 }
 
-h1, h2, h3 {
-  color: #0a6fa3;
+/* Sections spacing */
+section {
+  padding: 60px 20px;
 }
 
-a {
-  text-decoration: none;
-  transition: all 0.3s ease;
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 40px 0 20px;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Center all content like Bootstrap container */
+.container-custom {
+  width: min(1100px, 90%);
+  margin: auto;
 }
 
 .navbar {
