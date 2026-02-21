@@ -1,0 +1,25 @@
+@use "variables" as v;
+
+/* Light Theme */
+body {
+  background-color: map-get(v.$light-theme, bg);
+  color: map-get(v.$light-theme, text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  background-color: map-get(v.$dark-theme, bg);
+  color: map-get(v.$dark-theme, text);
+}
+
+/* Cards in dark mode */
+body.dark-mode .card,
+body.dark-mode .footer-pro {
+  background-color: map-get(v.$dark-theme, card);
+}
+
+/* Links in dark mode */
+body.dark-mode a {
+  color: map-get(v.$dark-theme, primary);
+}

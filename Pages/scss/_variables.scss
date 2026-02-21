@@ -1,8 +1,43 @@
+/* ========== COLORS ========== */
 $primary: #0a6fa3;
 $secondary: #12a4d9;
-$dark: #023047;
-$light: #f1f1f1;
-$accent: #2a9d8f;
+$accent: #20c997;
 
-$radius: 14px;
-$transition: all 0.3s ease;
+$dark: #1e1e1e;
+$light: #ffffff;
+$text: #2b2b2b;
+$bg: #f4f9fc;
+
+/* ========== SIZES ========== */
+$radius: 18px;
+$radius-sm: 10px;
+$radius-lg: 30px;
+
+$padding: 1rem;
+$section-space: 4rem;
+
+/* ========== FONTS ========== */
+$heading-font: "Segoe UI", sans-serif;
+$body-font: system-ui, Arial, sans-serif;
+
+/* ========== SHADOWS ========== */
+$shadow-sm: 0 4px 10px rgba(0,0,0,0.08);
+$shadow-md: 0 10px 25px rgba(0,0,0,0.12);
+$shadow-lg: 0 20px 40px rgba(0,0,0,0.18);
+/* ========== THEME MAPS ========== */
+
+$light-theme: (
+  bg: #f4f9fc,
+  text: #2b2b2b,
+  card: #ffffff,
+  nav: #ffffff,
+  border: #e5e5e5
+);
+
+$dark-theme: (
+  bg: #0f172a,
+  text: #e5e7eb,
+  card: #1e293b,
+  nav: #020617,
+  border: #334155
+);

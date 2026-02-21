@@ -1,3 +1,8 @@
+/* ========== COLORS ========== */
+/* ========== SIZES ========== */
+/* ========== FONTS ========== */
+/* ========== SHADOWS ========== */
+/* ========== THEME MAPS ========== */
 /* Reset */
 * {
   box-sizing: border-box;
@@ -32,7 +37,7 @@ h2 {
 img {
   max-width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: 18px;
 }
 
 /* Center all content like Bootstrap container */
@@ -109,7 +114,7 @@ img {
 }
 
 .navbar {
-  background: #023047;
+  background: #1e1e1e;
   position: fixed;
   top: 0;
   width: 100%;
@@ -121,5 +126,26 @@ img {
 .navbar .nav-link:hover {
   color: #12a4d9;
 }
+
+/* Light Theme */
+body {
+  background-color: #f4f9fc;
+  color: #2b2b2b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Cards in dark mode */
+body.dark-mode .card,
+body.dark-mode .footer-pro {
+  background-color: #1e293b;
+}
+
+/* Links in dark mode */
 
 /*# sourceMappingURL=style.css.map */
