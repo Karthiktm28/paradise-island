@@ -40,6 +40,11 @@ img {
   border-radius: 18px;
 }
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Center all content like Bootstrap container */
 .container-custom {
   width: min(1100px, 90%);
