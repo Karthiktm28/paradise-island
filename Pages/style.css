@@ -118,6 +118,18 @@ html {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+.btn-custom {
+  border-radius: 30px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
 .navbar {
   background: #1e1e1e;
   position: fixed;
