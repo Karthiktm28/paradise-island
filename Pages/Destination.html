@@ -241,6 +241,25 @@ btn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
 </script>
+<div class="cursor-glow"></div>
+<script>
+  const cursor = document.querySelector('.cursor-glow');
 
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  const hoverElements = document.querySelectorAll('a, button');
+
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('active');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
