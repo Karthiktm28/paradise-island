@@ -131,6 +131,24 @@ html {
   max-width: 650px;
 }
 
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  background: linear-gradient(90deg, #ffffff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .btn-custom {
   border-radius: 30px;
   padding: 0.6rem 1.4rem;
