@@ -118,20 +118,17 @@ html {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.section {
-  padding: 80px 20px;
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../Multimedia/Tropical beach.jpg") center/cover no-repeat;
+  padding: 0 8%;
+  color: white;
 }
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+.hero__content {
+  max-width: 650px;
 }
 
 .btn-custom {
@@ -177,23 +174,6 @@ body.dark-mode {
 body.dark-mode .card,
 body.dark-mode .footer-pro {
   background-color: #1e293b;
-}
-.cursor-glow {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, rgba(0,198,255,0.6) 0%, rgba(0,198,255,0) 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, background 0.3s ease;
-  z-index: 9999;
-}
-
-.cursor-glow.active {
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, rgba(0,114,255,0.5) 0%, rgba(0,114,255,0) 70%);
 }
 
 /* Links in dark mode */

@@ -74,4 +74,21 @@
   border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url('../../Multimedia/Tropical\ beach.jpg') center/cover no-repeat;
 
+  padding: 0 8%;
+  color: white;
+
+  &__content {
+    max-width: 650px;
+  }
+}
