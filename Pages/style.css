@@ -149,16 +149,38 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
-.btn-custom {
+.hero__buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 12px 28px;
   border-radius: 30px;
-  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
 }
-
-.btn-custom:hover {
+.btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.4);
+}
+
+.btn-outline {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
 }
 
 .navbar {
@@ -195,5 +217,23 @@ body.dark-mode .footer-pro {
 }
 
 /* Links in dark mode */
+.btn {
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff !important;
+  transition: all 0.3s ease;
+  border: none;
+}
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 114, 255, 0.5);
+}
+.btn:active {
+  transform: scale(0.96);
+}
 
 /*# sourceMappingURL=style.css.map */
