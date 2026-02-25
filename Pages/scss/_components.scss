@@ -19,3 +19,31 @@
     transform: scale(0.96);
   }
 }
+/* ===== EXPENSE TABLE ===== */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+  th {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  tr:hover {
+    background-color: #f5fbff;
+    transition: 0.3s ease;
+  }
+}
