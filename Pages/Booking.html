@@ -12,71 +12,46 @@
 </head>
 
 <body class="booking-page">
+<section class="booking-section">
+  <div class="booking-container">
+    <h1>Please Enter Your Details</h1>
 
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <form class="booking-form">
 
-  <div class="col-lg-6 col-md-8">
-
-
-<div class="card shadow-lg p-4">
-
-  <h1 class="text-center mb-4">Please Enter Your Details</h1>
-
-  <form>
-
-    <!-- Username -->
-    <div class="mb-3">
-      <label class="form-label">Username</label>
-     <input type="text" class="form-control" required minlength="3">
-    </div>
-
-    <!-- Password -->
-    <div class="mb-3">
-      <label class="form-label">Password</label>
-      <input type="password" class="form-control" required minlength="6">
-    </div>
-
-    <!-- Hobbies -->
-    <h5 class="mt-4">Select your hobbies</h5>
-
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="reading">
-      <label class="form-check-label" for="reading">Reading</label>
-    </div>
-
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gaming">
-      <label class="form-check-label" for="gaming">Gaming</label>
-    </div>
-
-    <!-- Gender -->
-    <h5 class="mt-4">Select your gender</h5>
-
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="gender" id="male">
-      <label class="form-check-label" for="male">Male</label>
-    </div>
-
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="gender" id="female">
-      <label class="form-check-label" for="female">Female</label>
-    </div>
-
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="gender" id="other">
-      <label class="form-check-label" for="other">Other</label>
-    </div>
-
-    <!-- Submit -->
-    <button type="submit" class="btn btn-primary w-100 mt-4">Submit</button>
-
-  </form>
-
+      <div class="form-group full-width">
+  <label>Username</label>
+  <input type="text" />
 </div>
 
+<div class="form-group full-width">
+  <label>Password</label>
+  <input type="password" />
+</div>
+
+      <div class="form-group full-width">
+        <label>Select your hobbies</label>
+        <div class="option-group">
+          <label><input type="checkbox" /> Reading</label>
+          <label><input type="checkbox" /> Gaming</label>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Select your gender</label>
+        <div class="option-group">
+          <label><input type="radio" name="gender" /> Male</label>
+          <label><input type="radio" name="gender" /> Female</label>
+          <label><input type="radio" name="gender" /> Other</label>
+        </div>
+      </div>
+
+      <div class="full-width">
+        <button class="btn-submit">Submit</button>
+      </div>
+
+    </form>
   </div>
-
-</div>
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
