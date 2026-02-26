@@ -163,6 +163,31 @@ html {
   color: #12a4d9;
 }
 
+.navbar .nav-link {
+  position: relative;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #00c6ff;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
 /* Light Theme */
 body {
   background-color: #f4f9fc;
