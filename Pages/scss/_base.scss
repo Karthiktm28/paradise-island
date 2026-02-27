@@ -44,6 +44,15 @@ h3 {
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
+h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
 
 /* Images responsive */
 img {
