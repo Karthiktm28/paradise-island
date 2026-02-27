@@ -1,9 +1,4 @@
-/* ========== COLORS ========== */
-/* ========== SIZES ========== */
-/* ========== FONTS ========== */
-/* ========== SHADOWS ========== */
-/* ========== THEME MAPS ========== */
-/* Reset */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,8 +8,9 @@
 /* Page spacing */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #eef9ee;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
   line-height: 1.6;
+  color: #1f2937;
 }
 
 /* Sections spacing */
