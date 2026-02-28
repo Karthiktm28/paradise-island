@@ -89,6 +89,18 @@ ol li {
   margin-bottom: 8px;
 }
 
+/* ===== SCROLL REVEAL SYSTEM ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Center all content like Bootstrap container */
 .container-custom {
   width: min(1100px, 90%);
