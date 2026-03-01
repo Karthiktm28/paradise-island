@@ -235,6 +235,33 @@ ol li {
   transform: translateY(-10px) scale(1.03);
 }
 
+/* ===== ABOUT HERO ===== */
+.about-hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background: linear-gradient(135deg, #e0f7ff, #f8fbff);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero__content {
+  max-width: 600px;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #475569;
+}
+
 .navbar {
   background: #1e1e1e;
   position: fixed;
@@ -283,6 +310,31 @@ ol li {
 
 .navbar:hover {
   box-shadow: 0 12px 30px rgba(0, 114, 255, 0.25);
+}
+
+/* ===== ABOUT NAVIGATION ===== */
+.about-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+}
+
+.about-nav .logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.about-nav .nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.about-nav .nav-links a:hover {
+  color: #0072ff;
 }
 
 /* Light Theme */
@@ -509,6 +561,15 @@ body.dark-mode .footer-pro {
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===== ABOUT FOOTER ===== */
+.about-footer {
+  text-align: center;
+  padding: 20px;
+  background: #f1f5f9;
+  font-size: 0.9rem;
+  color: #475569;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -138,3 +138,30 @@
 .features div:hover {
   transform: translateY(-10px) scale(1.03);
 }
+/* ===== ABOUT HERO ===== */
+
+.about-hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background: linear-gradient(135deg, #e0f7ff, #f8fbff);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero__content {
+  max-width: 600px;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #475569;
+}
