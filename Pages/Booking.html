@@ -56,6 +56,26 @@
 </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const page = document.querySelector(".page-transition");
+  page.classList.add("loaded");
 
+  document.querySelectorAll("a[href]").forEach(link => {
+    const url = link.getAttribute("href");
+
+    if (!url.startsWith("#") && !url.startsWith("mailto") && !url.startsWith("tel")) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        page.classList.remove("loaded");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 300);
+      });
+    }
+  });
+});
+</script>
 </body>
 </html>
