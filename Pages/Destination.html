@@ -9,6 +9,7 @@
 
 </head>
 <body>
+  <div class="scroll-progress"></div>
 <div class="container-custom">
     
    <section class="hero">
@@ -265,6 +266,14 @@ btn.addEventListener("click", () => {
     });
   });
 </script>
-<script src="../scroll.js"></script>
+<script>
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+});
+</script>
 </body>
 </html>
