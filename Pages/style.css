@@ -113,6 +113,18 @@ ol li {
   transition: width 0.1s ease-out;
 }
 
+/* ===== PAGE TRANSITION SYSTEM ===== */
+.page-transition {
+  opacity: 1;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page-transition.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Center all content like Bootstrap container */
 .container-custom {
   width: min(1100px, 90%);
