@@ -219,3 +219,20 @@
   font-size: 0.9rem;
   color: #475569;
 }
+/* ===== GLASS COMPONENT ===== */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
