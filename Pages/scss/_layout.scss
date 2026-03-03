@@ -199,3 +199,11 @@
   justify-content: center;
   align-items: center;
 }
+body.dark-mode {
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #0f172a
+  );
+}

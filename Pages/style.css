@@ -321,6 +321,10 @@ ol li {
   align-items: center;
 }
 
+body.dark-mode {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+}
+
 .navbar {
   background: #1e1e1e;
   position: fixed;
