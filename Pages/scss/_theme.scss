@@ -1,25 +1,27 @@
 @use "variables" as v;
 
-/* Light Theme */
+/* ===== LIGHT MODE (DEFAULT) ===== */
+
 body {
-  background-color: map-get(v.$light-theme, bg);
-  color: map-get(v.$light-theme, text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background: #f4f9fc;
+  color: #1f2937;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Theme */
+/* ===== DARK MODE ===== */
+
 body.dark-mode {
-  background-color: map-get(v.$dark-theme, bg);
-  color: map-get(v.$dark-theme, text);
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
-/* Cards in dark mode */
-body.dark-mode .card,
-body.dark-mode .footer-pro {
-  background-color: map-get(v.$dark-theme, card);
+/* Glass adjustment in dark mode */
+
+body.dark-mode .glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Links in dark mode */
-body.dark-mode a {
-  color: map-get(v.$dark-theme, primary);
+body.dark-mode .feature-box {
+  background: rgba(255, 255, 255, 0.05);
 }
