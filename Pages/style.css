@@ -313,6 +313,14 @@ ol li {
   border-radius: 50%;
 }
 
+/* ===== GLASS SECTION WRAPPER ===== */
+.glass-section {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   background: #1e1e1e;
   position: fixed;
