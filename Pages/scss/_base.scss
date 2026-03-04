@@ -7,14 +7,6 @@
   padding: 0;
 }
 
-/* Page spacing */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
-  line-height: 1.6;
-  color: #1f2937;
-}
-
 /* Sections spacing */
 section {
   padding: 60px 20px;
@@ -66,7 +58,7 @@ html {
 }
 p {
   font-size: 1.05rem;
-  color: #74d0e4;
+  color: #7993a2f1;
   margin-bottom: 18px;
 }
 
@@ -82,18 +74,6 @@ ul li {
 
 ol li {
   margin-bottom: 8px;
-}
-/* ===== SCROLL REVEAL SYSTEM ===== */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 /* ===== SCROLL PROGRESS BAR ===== */
 

@@ -1,18 +1,13 @@
 @use "variables" as v;
 
-/* ===== LIGHT MODE (DEFAULT) ===== */
-
-body {
-  background: #f4f9fc;
-  color: #1f2937;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
 /* ===== DARK MODE ===== */
-
 body.dark-mode {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #0f172a
+  );
 }
 
 /* Glass adjustment in dark mode */

@@ -1,20 +1,5 @@
 @use "variables" as v;
 
-.navbar {
-  background: v.$dark;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-
-  .nav-link {
-    color: white;
-
-    &:hover {
-      color: v.$secondary;
-    }
-  }
-}
 .navbar .nav-link {
   position: relative;
   color: white;

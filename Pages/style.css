@@ -10,14 +10,6 @@
   padding: 0;
 }
 
-/* Page spacing */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
-  line-height: 1.6;
-  color: #1f2937;
-}
-
 /* Sections spacing */
 section {
   padding: 60px 20px;
@@ -71,7 +63,7 @@ html {
 
 p {
   font-size: 1.05rem;
-  color: #74d0e4;
+  color: rgba(121, 147, 162, 0.9450980392);
   margin-bottom: 18px;
 }
 
@@ -87,18 +79,6 @@ ul li {
 
 ol li {
   margin-bottom: 8px;
-}
-
-/* ===== SCROLL REVEAL SYSTEM ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ===== SCROLL PROGRESS BAR ===== */
@@ -325,20 +305,6 @@ body.dark-mode {
   background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
 }
 
-.navbar {
-  background: #1e1e1e;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-.navbar .nav-link {
-  color: white;
-}
-.navbar .nav-link:hover {
-  color: #12a4d9;
-}
-
 .navbar .nav-link {
   position: relative;
   color: white;
@@ -400,17 +366,9 @@ body.dark-mode {
   color: #0072ff;
 }
 
-/* ===== LIGHT MODE (DEFAULT) ===== */
-body {
-  background: #f4f9fc;
-  color: #1f2937;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
 /* ===== DARK MODE ===== */
 body.dark-mode {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
 }
 
 /* Glass adjustment in dark mode */
@@ -676,7 +634,7 @@ body.dark-mode .feature-box {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-20px);
   }
   100% {
     transform: translateY(0px);
