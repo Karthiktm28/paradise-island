@@ -13,3 +13,11 @@ services:
     volumes:
       - .:/app
     command: npx sass --watch Pages/scss:Pages
+  livereload:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: npx browser-sync start --server Pages --files "Pages/**/*"
+    ports:
+      - "3000:3000"

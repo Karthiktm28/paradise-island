@@ -180,14 +180,14 @@ h1 {
   align-items: center;
   padding: 0 8%;
   color: white;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../Multimedia/Tropical beach.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../Multimedia/Tropical beach.jpg") center/cover no-repeat;
 }
 .hero__content {
   max-width: 650px;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
   background: linear-gradient(90deg, #ffffff, #00c6ff);
@@ -245,7 +245,7 @@ h1 {
 .about-hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #475569;
+  color: #21487a;
 }
 
 .about-hero {
