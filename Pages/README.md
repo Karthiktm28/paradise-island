@@ -1,4 +1,0 @@
-# Paradise Island
-
-<br>
-
