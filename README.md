@@ -1,3 +1,9 @@
+![CI](https://github.com/Karthiktm28/paradise-island/actions/workflows/docker-build.yml/badge.svg)
+
+![Docker](https://img.shields.io/badge/docker-ready-blue?logo=docker)
+
+![GitHub stars](https://img.shields.io/github/stars/Karthiktm28/paradise-island?style=social)
+
 # 🌴 Paradise Island
 
 A modern static travel website built with **HTML + SCSS**, containerized using **Docker**, and automated with **CI/CD using GitHub Actions**.
