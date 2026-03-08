@@ -21,14 +21,6 @@ A modern static travel website built with **HTML + SCSS**, containerized using *
 - Docker Hub Image Publishing
 
 ---
-
-## 🔧 Project Architecture
-Yes 👍 — you should paste it, but it must be inside a Markdown code block in your README.md. That ensures GitHub renders it correctly as a diagram.
-
-How to Add It
-
-Open your README.md and include it like this:
-
 ## 🔧 Project Architecture
 
 ```
