@@ -21,3 +21,25 @@ if (toggle) {
     document.body.classList.toggle("dark-mode");
   });
 }
+
+const peopleInput = document.getElementById("people");
+const daysInput = document.getElementById("days");
+const totalPrice = document.getElementById("totalPrice");
+
+if (peopleInput && daysInput) {
+
+  function calculatePrice() {
+    const people = peopleInput.value;
+    const days = daysInput.value;
+
+    const pricePerDay = 120;
+
+    const total = people * days * pricePerDay;
+
+    totalPrice.textContent = "$" + total;
+  }
+
+  peopleInput.addEventListener("input", calculatePrice);
+  daysInput.addEventListener("input", calculatePrice);
+
+}
