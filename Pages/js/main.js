@@ -12,3 +12,12 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+// Dark Mode Toggle
+
+const toggle = document.querySelector(".theme-toggle");
+
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+}
