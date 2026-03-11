@@ -180,7 +180,7 @@ h1 {
   align-items: center;
   padding: 0 8%;
   color: white;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("/Multimedia/Tropical beach.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../Multimedia/tropical-beach.jpg") center/cover no-repeat;
 }
 .hero__content {
   max-width: 650px;
@@ -283,10 +283,6 @@ h1 {
   align-items: center;
 }
 
-body.dark-mode {
-  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
-}
-
 .navbar .nav-link {
   position: relative;
   color: white;
@@ -353,14 +349,18 @@ body.dark-mode {
   background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
 }
 
-/* Glass adjustment in dark mode */
-body.dark-mode .glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+body.dark-mode {
+  background: #0f172a;
+  color: white;
 }
 
-body.dark-mode .feature-box {
-  background: rgba(255, 255, 255, 0.05);
+body.dark-mode .navbar {
+  background: #020617;
+}
+
+body.dark-mode .card {
+  background: #1e293b;
+  color: white;
 }
 
 .btn {

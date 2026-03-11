@@ -77,7 +77,8 @@
   padding: 0 8%;
   color: white;
 
-  background: linear-gradient(
+  background:
+    linear-gradient(
       rgba(0,0,0,0.45),
       rgba(0,0,0,0.45)
     ),
@@ -178,12 +179,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-body.dark-mode {
-  background: linear-gradient(
-    135deg,
-    #0f172a,
-    #1e293b,
-    #0f172a
-  );
 }

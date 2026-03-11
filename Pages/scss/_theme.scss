@@ -10,13 +10,16 @@ body.dark-mode {
   );
 }
 
-/* Glass adjustment in dark mode */
-
-body.dark-mode .glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+body.dark-mode {
+  background: #0f172a;
+  color: white;
 }
 
-body.dark-mode .feature-box {
-  background: rgba(255, 255, 255, 0.05);
+body.dark-mode .navbar {
+  background: #020617;
+}
+
+body.dark-mode .card {
+  background: #1e293b;
+  color: white;
 }

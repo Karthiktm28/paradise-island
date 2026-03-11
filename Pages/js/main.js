@@ -1,84 +1,101 @@
-// Scroll Reveal Animation
+document.addEventListener("DOMContentLoaded", () => {
 
-const reveals = document.querySelectorAll(".reveal");
+  // Scroll Reveal Animation
+  const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
-  reveals.forEach((element) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = element.getBoundingClientRect().top;
+  window.addEventListener("scroll", () => {
+    reveals.forEach((element) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = element.getBoundingClientRect().top;
 
-    if (elementTop < windowHeight - 100) {
-      element.classList.add("active");
+      if (elementTop < windowHeight - 100) {
+        element.classList.add("active");
+      }
+    });
+  });
+
+  // Dark Mode Toggle
+  const btn = document.querySelector(".theme-toggle");
+
+  if (btn) {
+
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+      btn.textContent = "☀️";
     }
-  });
-});
-// Dark Mode Toggle
 
-const toggle = document.querySelector(".theme-toggle");
+    btn.addEventListener("click", () => {
 
-if (toggle) {
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
-}
+      document.body.classList.toggle("dark-mode");
 
-const peopleInput = document.getElementById("people");
-const daysInput = document.getElementById("days");
-const totalPrice = document.getElementById("totalPrice");
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        btn.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        btn.textContent = "🌙";
+      }
 
-if (peopleInput && daysInput) {
+    });
 
-  function calculatePrice() {
-    const people = peopleInput.value;
-    const days = daysInput.value;
-
-    const pricePerDay = 120;
-
-    const total = people * days * pricePerDay;
-
-    totalPrice.textContent = "$" + total;
   }
 
-  peopleInput.addEventListener("input", calculatePrice);
-  daysInput.addEventListener("input", calculatePrice);
+  // Booking Price Calculator
+  const peopleInput = document.getElementById("people");
+  const daysInput = document.getElementById("days");
+  const totalPrice = document.getElementById("totalPrice");
 
-}
-// Animated Counters
+  if (peopleInput && daysInput) {
 
-const counters = document.querySelectorAll(".counter");
+    function calculatePrice() {
+      const people = peopleInput.value;
+      const days = daysInput.value;
 
-counters.forEach(counter => {
+      const pricePerDay = 120;
+      const total = people * days * pricePerDay;
 
-  counter.innerText = "0";
-
-  const updateCounter = () => {
-
-    const target = +counter.getAttribute("data-target");
-    const current = +counter.innerText;
-
-    const increment = target / 100;
-
-    if (current < target) {
-      counter.innerText = `${Math.ceil(current + increment)}`;
-      setTimeout(updateCounter, 30);
-    } else {
-      counter.innerText = target;
+      totalPrice.textContent = "$" + total;
     }
 
-  };
+    peopleInput.addEventListener("input", calculatePrice);
+    daysInput.addEventListener("input", calculatePrice);
+  }
 
-  updateCounter();
+  // Animated Counters
+  const counters = document.querySelectorAll(".counter");
 
-});
-// Mobile Menu Toggle
+  counters.forEach(counter => {
 
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+    counter.innerText = "0";
 
-if (menuToggle) {
+    const updateCounter = () => {
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+      const target = +counter.getAttribute("data-target");
+      const current = +counter.innerText;
+
+      const increment = target / 100;
+
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(updateCounter, 30);
+      } else {
+        counter.innerText = target;
+      }
+
+    };
+
+    updateCounter();
   });
 
-}
+  // Mobile Menu Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+
+  if (menuToggle) {
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+
+});

@@ -253,31 +253,6 @@ window.addEventListener("scroll", () => {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("themeToggle");
-
-  if (!btn) return;
-
-  // Load saved preference
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    btn.textContent = "☀️";
-  }
-
-  btn.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-      btn.textContent = "☀️";
-    } else {
-      localStorage.setItem("theme", "light");
-      btn.textContent = "🌙";
-    }
-  });
-});
-</script>
 <div class="cursor-glow"></div>
 <script>
   const cursor = document.querySelector('.cursor-glow');
