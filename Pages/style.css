@@ -308,6 +308,39 @@ h1 {
   color: white;
 }
 
+.activities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.activities .card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.activities .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.activities img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.activities .card img {
+  transition: transform 0.4s ease;
+}
+
+.activities .card:hover img {
+  transform: scale(1.1);
+}
+
 .navbar .nav-link {
   position: relative;
   color: white;
