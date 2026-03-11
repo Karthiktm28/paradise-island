@@ -86,6 +86,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCounter();
   });
+  const filterButtons = document.querySelectorAll("[data-filter]");
+const cards = document.querySelectorAll(".activities .card");
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    const filter = button.dataset.filter;
+
+    cards.forEach(card => {
+
+      if (filter === "all" || card.dataset.category === filter) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+  });
+
+});
 
   // Mobile Menu Toggle
   const menuToggle = document.getElementById("menu-toggle");

@@ -180,3 +180,27 @@
   justify-content: center;
   align-items: center;
 }
+.activity-filter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.activity-filter button {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activity-filter button:hover {
+  background: #0072ff;
+  color: white;
+}
+
+.activity-filter button.active {
+  background: #0072ff;
+  color: white;
+}
