@@ -59,3 +59,16 @@
 .about-nav .nav-links a:hover {
   color: #0072ff;
 }
+.menu-toggle {
+  font-size: 22px;
+  border: none;
+  background: transparent;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
