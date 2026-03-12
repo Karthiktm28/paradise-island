@@ -111,6 +111,29 @@ filterButtons.forEach(button => {
   });
 
 });
+// Hero Image Slider
+
+const hero = document.querySelector(".hero");
+
+if (hero) {
+
+  const images = [
+    "../Multimedia/tropical-beach.jpg",
+    "../Multimedia/1416023.jpg",
+    "../Multimedia/OIP.jpg"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+
+    hero.style.background =
+      `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${images[index]}') center/cover no-repeat`;
+
+  }, 5000);
+
+}
 
   // Mobile Menu Toggle
   const menuToggle = document.getElementById("menu-toggle");
