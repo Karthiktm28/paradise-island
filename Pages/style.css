@@ -364,6 +364,16 @@ h1 {
   display: flex;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #0072ff;
+  width: 0%;
+  z-index: 9999;
+}
+
 .navbar .nav-link {
   position: relative;
   color: white;

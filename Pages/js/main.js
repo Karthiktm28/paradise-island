@@ -166,3 +166,21 @@ if (bookingForm) {
 function closePopup() {
   document.getElementById("bookingPopup").classList.remove("show");
 }
+// Scroll Progress Bar
+
+const progressBar = document.querySelector(".scroll-progress");
+
+window.addEventListener("scroll", () => {
+
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const progress = (scrollTop / scrollHeight) * 100;
+
+  if (progressBar) {
+    progressBar.style.width = progress + "%";
+  }
+
+});
