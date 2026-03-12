@@ -147,3 +147,22 @@ if (hero) {
   }
 
 });
+// Booking Success Popup
+
+const bookingForm = document.getElementById("bookingForm");
+
+if (bookingForm) {
+
+  bookingForm.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    document.getElementById("bookingPopup").classList.add("show");
+
+  });
+
+}
+
+function closePopup() {
+  document.getElementById("bookingPopup").classList.remove("show");
+}
