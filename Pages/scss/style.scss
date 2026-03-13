@@ -1,6 +1,11 @@
+// 
+// style.scss — Main Entry Point
+// Import order matters: variables → base → layout → navbar → components → theme
+// 
+
 @use "variables";
 @use "base";
 @use "layout";
 @use "navbar";
-@use "theme";
 @use "components";
+@use "theme";

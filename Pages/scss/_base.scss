@@ -1,41 +1,39 @@
+// 
+// _base.scss — Global Reset & Typography
+// 
 @use "variables" as v;
 
-/* Reset */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Sections spacing */
-section {
-  padding: 60px 20px;
+html {
+  scroll-behavior: smooth;
+  font-family: v.$body-font;
 }
 
-/* Headings */
-/* ===== HEADINGS SYSTEM ===== */
+body {
+  background: v.$bg;
+  color: v.$text;
+  line-height: 1.7;
+  font-size: 1rem;
+}
 
+// --- Headings ---
 h1, h2, h3 {
+  font-family: v.$heading-font;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #0f172a;
 }
 
-h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-}
+h1 { font-size: clamp(2rem, 5vw, 3rem);   margin-bottom: 20px; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 50px 0 20px; position: relative; }
+h3 { font-size: 1.4rem;  margin-bottom: 15px; }
 
-h2 {
-  font-size: 2.2rem;
-  margin: 50px 0 20px;
-  position: relative;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
+// Decorative underline on h2
 h2::after {
   content: "";
   display: block;
@@ -43,60 +41,41 @@ h2::after {
   height: 4px;
   margin-top: 10px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  background: v.$gradient-brand;
 }
 
-/* Images responsive */
+// --- Body copy ---
+p {
+  font-size: 1.05rem;
+  color: rgba(121, 147, 162, 0.95);
+  margin-bottom: 18px;
+}
+
+// --- Lists ---
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+ul li, ol li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+// --- Images ---
 img {
   max-width: 100%;
   display: block;
   border-radius: v.$radius;
 }
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-p {
-  font-size: 1.05rem;
-  color: #7993a2f1;
-  margin-bottom: 18px;
+
+// --- Sections ---
+section {
+  padding: 60px 20px;
 }
 
-ul {
-  margin-left: 20px;
-  margin-bottom: 25px;
+// --- Links ---
+a {
+  color: inherit;
+  text-decoration: none;
 }
-
-ul li {
-  margin-bottom: 8px;
-  font-size: 1rem;
-}
-
-ol li {
-  margin-bottom: 8px;
-}
-/* ===== SCROLL PROGRESS BAR ===== */
-
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 0%;
-  z-index: 9999;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  transition: width 0.1s ease-out;
-}
-/* ===== PAGE TRANSITION SYSTEM ===== */
-
-.page-transition {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.page-transition.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
-

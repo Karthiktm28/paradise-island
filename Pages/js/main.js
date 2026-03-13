@@ -1,186 +1,252 @@
+/**
+ * Paradise Island — main.js
+ * All site-wide JavaScript in one organised file.
+ * Sections:
+ *   1. Page Transition
+ *   2. Scroll Progress Bar
+ *   3. Dark Mode Toggle
+ *   4. Animated Counters
+ *   5. Scroll Reveal Animation
+ *   6. Activity Filter
+ *   7. Hero Image Slider
+ *   8. Mobile Menu Toggle (About nav)
+ *   9. Active Nav Link Highlight (Destination sticky nav)
+ *  10. Custom Cursor Glow
+ *  11. Booking Price Calculator
+ *  12. Booking Success Popup
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Scroll Reveal Animation
-  const reveals = document.querySelectorAll(".reveal");
+  /*
+     1. PAGE TRANSITION
+  */
+  const page = document.querySelector(".page-transition");
+  if (page) {
+    // Fade in on load
+    page.classList.add("loaded");
 
-  window.addEventListener("scroll", () => {
-    reveals.forEach((element) => {
-      const windowHeight = window.innerHeight;
-      const elementTop = element.getBoundingClientRect().top;
-
-      if (elementTop < windowHeight - 100) {
-        element.classList.add("active");
+    // Fade out before navigating away
+    document.querySelectorAll("a[href]").forEach(link => {
+      const url = link.getAttribute("href");
+      if (!url.startsWith("#") && !url.startsWith("mailto") && !url.startsWith("tel")) {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          page.classList.remove("loaded");
+          setTimeout(() => { window.location.href = url; }, 300);
+        });
       }
     });
-  });
+  }
 
-  // Dark Mode Toggle
-  const btn = document.querySelector(".theme-toggle");
 
-  if (btn) {
+  /*
+     2. SCROLL PROGRESS BAR
+  */
+  const progressBar = document.querySelector(".scroll-progress");
+  if (progressBar) {
+    window.addEventListener("scroll", () => {
+      const scrollTop  = document.documentElement.scrollTop;
+      const scrollable = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressBar.style.width = ((scrollTop / scrollable) * 100) + "%";
+    }, { passive: true });
+  }
 
+
+  /*
+     3. DARK MODE TOGGLE
+  */
+  const themeBtn = document.querySelector(".theme-toggle");
+  if (themeBtn) {
+    // Restore saved preference
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark-mode");
-      btn.textContent = "☀️";
+      themeBtn.textContent = "☀️";
     }
 
-    btn.addEventListener("click", () => {
-
+    themeBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
-
-      if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        btn.textContent = "☀️";
-      } else {
-        localStorage.setItem("theme", "light");
-        btn.textContent = "🌙";
-      }
-
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      themeBtn.textContent = isDark ? "☀️" : "🌙";
     });
-
   }
 
-  // Booking Price Calculator
-  const peopleInput = document.getElementById("people");
-  const daysInput = document.getElementById("days");
-  const totalPrice = document.getElementById("totalPrice");
 
-  if (peopleInput && daysInput) {
-
-    function calculatePrice() {
-      const people = peopleInput.value;
-      const days = daysInput.value;
-
-      const pricePerDay = 120;
-      const total = people * days * pricePerDay;
-
-      totalPrice.textContent = "$" + total;
-    }
-
-    peopleInput.addEventListener("input", calculatePrice);
-    daysInput.addEventListener("input", calculatePrice);
-  }
-
-  // Animated Counters
+  /*
+     4. ANIMATED COUNTERS
+  */
   const counters = document.querySelectorAll(".counter");
-
   counters.forEach(counter => {
-
-    counter.innerText = "0";
+    counter.textContent = "0";
+    const target = +counter.getAttribute("data-target");
+    const increment = target / 100;
 
     const updateCounter = () => {
-
-      const target = +counter.getAttribute("data-target");
-      const current = +counter.innerText;
-
-      const increment = target / 100;
-
+      const current = +counter.textContent;
       if (current < target) {
-        counter.innerText = Math.ceil(current + increment);
+        counter.textContent = Math.ceil(current + increment);
         setTimeout(updateCounter, 30);
       } else {
-        counter.innerText = target;
+        counter.textContent = target.toLocaleString();
       }
-
     };
-
     updateCounter();
   });
+
+
+  /*
+     5. SCROLL REVEAL ANIMATION
+  */
+  const reveals = document.querySelectorAll(".reveal");
+  if (reveals.length) {
+    const checkReveal = () => {
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    };
+    window.addEventListener("scroll", checkReveal, { passive: true });
+    checkReveal(); // Run once on load in case elements are already visible
+  }
+
+
+  /*
+     6. ACTIVITY FILTER
+  */
   const filterButtons = document.querySelectorAll("[data-filter]");
-const cards = document.querySelectorAll(".activities .card");
+  const activityCards = document.querySelectorAll(".activities .card");
 
-filterButtons.forEach(button => {
+  if (filterButtons.length) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
 
-  button.addEventListener("click", () => {
-
-    filterButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    const filter = button.dataset.filter;
-
-    cards.forEach(card => {
-
-      if (filter === "all" || card.dataset.category === filter) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-
+        const filter = btn.dataset.filter;
+        activityCards.forEach(card => {
+          card.style.display = (filter === "all" || card.dataset.category === filter)
+            ? "block"
+            : "none";
+        });
+      });
     });
+  }
 
-  });
 
-});
-// Hero Image Slider
+  /*
+     7. HERO IMAGE SLIDER
+  */
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    const images = [
+      "../Multimedia/tropical-beach.jpg",
+      "../Multimedia/1416023.jpg",
+      "../Multimedia/OIP.jpg"
+    ];
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      hero.style.background =
+        `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${images[index]}') center/cover no-repeat`;
+    }, 5000);
+  }
 
-const hero = document.querySelector(".hero");
 
-if (hero) {
-
-  const images = [
-    "../Multimedia/tropical-beach.jpg",
-    "../Multimedia/1416023.jpg",
-    "../Multimedia/OIP.jpg"
-  ];
-
-  let index = 0;
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-
-    hero.style.background =
-      `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${images[index]}') center/cover no-repeat`;
-
-  }, 5000);
-
-}
-
-  // Mobile Menu Toggle
+  /*
+     8. MOBILE MENU TOGGLE (About-style nav)
+  */
   const menuToggle = document.getElementById("menu-toggle");
-
   if (menuToggle) {
     const navLinks = document.querySelector(".nav-links");
+    if (navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        menuToggle.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+      });
+    }
+  }
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+
+  /*
+     9. ACTIVE NAV LINK HIGHLIGHT (Destination page)
+  */
+  const sections     = document.querySelectorAll("section[id], h2[id]");
+  const stickyLinks  = document.querySelectorAll(".navbar .nav-link");
+
+  if (sections.length && stickyLinks.length) {
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 120) {
+          current = section.getAttribute("id") || "";
+        }
+      });
+      stickyLinks.forEach(link => {
+        link.classList.remove("active");
+        if (current && link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    }, { passive: true });
+  }
+
+
+  /*
+     10. CUSTOM CURSOR GLOW
+  */
+  const cursor = document.querySelector(".cursor-glow");
+  if (cursor) {
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top  = e.clientY + "px";
+    });
+    document.querySelectorAll("a, button").forEach(el => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("active"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
     });
   }
 
-});
-// Booking Success Popup
 
-const bookingForm = document.getElementById("bookingForm");
+  /*
+     11. BOOKING PRICE CALCULATOR
+  */
+  const peopleInput = document.getElementById("people");
+  const daysInput   = document.getElementById("days");
+  const totalPrice  = document.getElementById("totalPrice");
 
-if (bookingForm) {
-
-  bookingForm.addEventListener("submit", function(e) {
-
-    e.preventDefault();
-
-    document.getElementById("bookingPopup").classList.add("show");
-
-  });
-
-}
-
-function closePopup() {
-  document.getElementById("bookingPopup").classList.remove("show");
-}
-// Scroll Progress Bar
-
-const progressBar = document.querySelector(".scroll-progress");
-
-window.addEventListener("scroll", () => {
-
-  const scrollTop = document.documentElement.scrollTop;
-  const scrollHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-
-  const progress = (scrollTop / scrollHeight) * 100;
-
-  if (progressBar) {
-    progressBar.style.width = progress + "%";
+  if (peopleInput && daysInput && totalPrice) {
+    const PRICE_PER_DAY = 120;
+    const calculate = () => {
+      const people = Math.max(0, +peopleInput.value || 0);
+      const days   = Math.max(0, +daysInput.value   || 0);
+      totalPrice.textContent = "$" + (people * days * PRICE_PER_DAY).toLocaleString();
+    };
+    peopleInput.addEventListener("input", calculate);
+    daysInput.addEventListener("input", calculate);
   }
 
-});
+
+  /*
+     12. BOOKING SUCCESS POPUP
+  */
+  const bookingForm = document.getElementById("bookingForm");
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const popup = document.getElementById("bookingPopup");
+      if (popup) popup.classList.add("show");
+    });
+  }
+
+}); // end DOMContentLoaded
+
+
+/*
+   GLOBAL: Close Popup (called from inline onclick)
+============================================= */
+function closePopup() {
+  const popup = document.getElementById("bookingPopup");
+  if (popup) popup.classList.remove("show");
+}

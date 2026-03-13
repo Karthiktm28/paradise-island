@@ -1,104 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paradise Island | Booking</title>
-
-<!-- Bootstrap -->
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradise Island | Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 <body class="booking-page">
-  
+
+  <!-- Scroll Progress Bar -->
   <div class="scroll-progress"></div>
+
+  <!-- Page Transition Wrapper -->
   <div class="page-transition">
-<section class="booking-section">
-  <div class="booking-container">
-    <h1>Please Enter Your Details</h1>
 
-    <form class="booking-form" id="bookingForm">
-
-      <div class="form-group full-width">
-  <label>Username</label>
-  <input type="text" />
-</div>
-
-<div class="form-group full-width">
-  <label>Password</label>
-  <input type="password" />
-</div>
-
-      <div class="form-group full-width">
-        <label>Select your hobbies</label>
-        <div class="option-group">
-          <label><input type="checkbox" /> Reading</label>
-          <label><input type="checkbox" /> Gaming</label>
-        </div>
+    <!-- Navigation -->
+    <nav class="about-nav">
+      <div class="logo">Paradise Island</div>
+      <div class="nav-links">
+        <a href="About.html">Home</a>
+        <a href="Destination.html">Destinations</a>
+        <a href="Booking.html" class="active">Booking</a>
+        <a href="Form.html">Contact</a>
       </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </nav>
 
-      <div class="form-group full-width">
-        <label>Select your gender</label>
-        <div class="option-group">
-          <label><input type="radio" name="gender" /> Male</label>
-          <label><input type="radio" name="gender" /> Female</label>
-          <label><input type="radio" name="gender" /> Other</label>
-        </div>
+    <!-- Booking Form Section -->
+    <section class="booking-section">
+      <div class="booking-container">
+        <h1>Book Your Escape</h1>
+
+        <form class="booking-form" id="bookingForm" novalidate>
+
+          <!-- Username -->
+          <div class="form-group full-width">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required minlength="3" maxlength="30" autocomplete="username">
+          </div>
+
+          <!-- Password -->
+          <div class="form-group full-width">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="5" maxlength="30" autocomplete="current-password">
+          </div>
+
+          <!-- Hobbies -->
+          <div class="form-group full-width">
+            <label>Select your hobbies</label>
+            <div class="option-group">
+              <label><input type="checkbox" name="hobbies" value="reading"> Reading</label>
+              <label><input type="checkbox" name="hobbies" value="gaming"> Gaming</label>
+            </div>
+          </div>
+
+          <!-- Gender -->
+          <div class="form-group full-width">
+            <label>Select your gender</label>
+            <div class="option-group">
+              <label><input type="radio" name="gender" value="male"> Male</label>
+              <label><input type="radio" name="gender" value="female"> Female</label>
+              <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+          </div>
+
+          <!-- Number of People -->
+          <div class="form-group">
+            <label for="people">Number of People</label>
+            <input type="number" id="people" name="people" min="1" max="50" placeholder="e.g. 2">
+          </div>
+
+          <!-- Number of Days -->
+          <div class="form-group">
+            <label for="days">Number of Days</label>
+            <input type="number" id="days" name="days" min="1" max="30" placeholder="e.g. 5">
+          </div>
+
+          <!-- Price Display -->
+          <div class="form-group full-width price-display">
+            <p>Estimated Total: <strong id="totalPrice">$0</strong></p>
+            <small>Based on $120 per person per day</small>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-group full-width">
+            <button type="submit" class="btn-submit">Confirm Booking</button>
+          </div>
+
+        </form>
       </div>
-      <div class="form-group">
-  <label>Number of People</label>
-  <input type="number" id="people" min="1" placeholder="Enter number of people">
-</div>
+    </section>
 
-<div class="form-group">
-  <label>Number of Days</label>
-  <input type="number" id="days" min="1" placeholder="Enter number of days">
-</div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <h3>Paradise Island</h3>
+        <p>Plan your dream vacation today</p>
+        <div class="footer-links">
+          <a href="About.html">Home</a>
+          <a href="Destination.html">Destinations</a>
+          <a href="Booking.html">Booking</a>
+          <a href="Form.html">Contact</a>
+        </div>
+        <p class="footer-copy">© 2026 Paradise Island. All rights reserved.</p>
+      </div>
+    </footer>
 
-<div class="form-group full-width">
-  <p>Total Price: <strong id="totalPrice">$0</strong></p>
-</div>
+  </div><!-- end .page-transition -->
 
-<div class="full-width">
-  <button class="btn-submit">Submit</button>
-</div>
-
-
-    </form>
+  <!-- Booking Success Popup -->
+  <div id="bookingPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup-content">
+      <h3 id="popupTitle">🎉 Booking Successful!</h3>
+      <p>Your island adventure is confirmed. We'll be in touch soon.</p>
+      <button onclick="closePopup()" class="btn">Close</button>
+    </div>
   </div>
-</section>
-</div>
-<div id="bookingPopup" class="popup">
-  <div class="popup-content">
-    <h3>🎉 Booking Successful!</h3>
-    <p>Your island adventure is confirmed.</p>
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const page = document.querySelector(".page-transition");
-  page.classList.add("loaded");
 
-  document.querySelectorAll("a[href]").forEach(link => {
-    const url = link.getAttribute("href");
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 
-    if (!url.startsWith("#") && !url.startsWith("mailto") && !url.startsWith("tel")) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        page.classList.remove("loaded");
-
-        setTimeout(() => {
-          window.location = url;
-        }, 300);
-      });
-    }
-  });
-});
-</script>
-<script src="js/main.js"></script>
 </body>
 </html>

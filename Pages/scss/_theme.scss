@@ -1,25 +1,69 @@
-@use "variables" as v;
-
-/* ===== DARK MODE ===== */
-body.dark-mode {
-  background: linear-gradient(
-    135deg,
-    #0f172a,
-    #1e293b,
-    #0f172a
-  );
-}
+// 
+// _theme.scss — Dark Mode Overrides
+// 
 
 body.dark-mode {
   background: #0f172a;
-  color: white;
-}
+  color: #e2e8f0;
 
-body.dark-mode .navbar {
-  background: #020617;
-}
+  h1, h2, h3 { color: #f1f5f9; }
 
-body.dark-mode .card {
-  background: #1e293b;
-  color: white;
+  p { color: #94a3b8; }
+
+  .navbar {
+    background: #020617 !important;
+  }
+
+  .about-nav {
+    background: rgba(15, 23, 42, 0.92);
+    .logo, .nav-links a { color: #e2e8f0; }
+    .nav-links a:hover  { color: #00c6ff; background: rgba(0,198,255,0.1); }
+    .nav-links a.active { color: #00c6ff; background: rgba(0,198,255,0.12); }
+  }
+
+  .booking-container,
+  .activities .card,
+  .popup-content,
+  #info-flex > div {
+    background: #1e293b;
+    color: #e2e8f0;
+  }
+
+  .form-group input {
+    background: #0f172a;
+    border-color: #334155;
+    color: #e2e8f0;
+
+    &:focus { border-color: #00c6ff; background: #1e293b; }
+    &:disabled { background: #0f172a; }
+  }
+
+  .form-group label { color: #cbd5e1; }
+
+  .price-display {
+    background: #1e293b;
+    border-left-color: #00c6ff;
+    p { color: #e2e8f0; }
+  }
+
+  .expense-table {
+    background: #1e293b;
+    tbody td { color: #cbd5e1; border-bottom-color: #334155; }
+    tbody tr:hover td { background: #263548; }
+  }
+
+  .feature-box {
+    background: rgba(255,255,255,0.05);
+    p { color: #e2e8f0; }
+  }
+
+  .activity-filter button {
+    background: #334155;
+    color: #e2e8f0;
+    &:hover, &.active { background: #0072ff; color: #fff; }
+  }
+
+  .footer { background: #020617; }
+
+  .about-footer { background: #1e293b; color: #94a3b8; }
 }
