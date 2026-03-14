@@ -142,8 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hero) {
     const images = [
       "../Multimedia/tropical-beach.jpg",
-      "../Multimedia/1416023.jpg",
-      "../Multimedia/OIP.jpg"
+      "../Multimedia/hero-beach.jpg",
+      "../Multimedia/snorkeling-tour.jpg"
     ];
     let index = 0;
     setInterval(() => {

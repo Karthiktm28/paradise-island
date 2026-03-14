@@ -33,10 +33,10 @@ paradise-island/
 │       └── docker-build.yml       # CI/CD pipeline
 │
 ├── Multimedia/                    # Images, video, SVG assets
-│   ├── 1416023.jpg
+│   ├── hero-beach.jpg
 │   ├── tropical-beach.jpg
 │   ├── Paradise-Island-snorkeling-tours-3.jpg
-│   ├── OIP.jpg
+│   ├── snorkeling-tour.jpg
 │   ├── up-arrow.png
 │   ├── new_cn_logo.svg
 │   └── 72442-543260631_medium.mp4
