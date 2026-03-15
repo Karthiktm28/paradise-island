@@ -250,3 +250,19 @@ function closePopup() {
   const popup = document.getElementById("bookingPopup");
   if (popup) popup.classList.remove("show");
 }
+function closeChatModal() {
+  document.getElementById('chatModal').style.display = 'none';
+  document.getElementById('chatSuccess').style.display = 'none';
+  document.getElementById('chatMsg').value = '';
+}
+
+function sendChatMsg() {
+  const msg = document.getElementById('chatMsg').value.trim();
+  if (!msg) {
+    document.getElementById('chatMsg').style.borderColor = 'red';
+    return;
+  }
+  document.getElementById('chatMsg').style.borderColor = '#ddd';
+  document.getElementById('chatSuccess').style.display = 'block';
+  document.getElementById('chatMsg').value = '';
+}
