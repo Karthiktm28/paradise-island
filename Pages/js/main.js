@@ -262,7 +262,29 @@ function sendChatMsg() {
     document.getElementById('chatMsg').style.borderColor = 'red';
     return;
   }
+
   document.getElementById('chatMsg').style.borderColor = '#ddd';
-  document.getElementById('chatSuccess').style.display = 'block';
-  document.getElementById('chatMsg').value = '';
+  document.getElementById('chatSendBtn').disabled = true;
+  document.getElementById('chatSendBtn').innerText = 'Sending...';
+
+  fetch('https://script.google.com/macros/s/AKfycbzY1IPduff45fBkQUlEQDoOuWYfZ4oYpV7I9_tWbL7Mi-yaqrIY6x7E-RSyJbMH-kl7/exec', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: msg })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === 'success') {
+      document.getElementById('chatSuccess').style.display = 'block';
+      document.getElementById('chatMsg').value = '';
+    }
+  })
+  .catch(err => {
+    alert('Something went wrong. Please try again.');
+    console.error('Chat error:', err);
+  })
+  .finally(() => {
+    document.getElementById('chatSendBtn').disabled = false;
+    document.getElementById('chatSendBtn').innerText = 'Send message';
+  });
 }
