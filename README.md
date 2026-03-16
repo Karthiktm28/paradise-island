@@ -209,3 +209,29 @@ This project is for educational purposes.
 ---
 
 > Built with 🌊 by [Karthik TM](https://github.com/Karthiktm28)
+## 💬 Live Chat & Google Sheets Integration
+
+Users can send messages directly from the website via a contact popup modal.
+Messages are stored in real time to a connected Google Sheet using **Google Apps Script**.
+
+### How it works
+```
+User types message
+      │
+      ▼
+Chat popup (frontend)
+      │
+      │  HTTP POST (fetch API)
+      ▼
+Google Apps Script (Web App)
+      │
+      │  appendRow()
+      ▼
+Google Sheets (stores Timestamp + Message)
+```
+
+### Tech used
+- Vanilla JavaScript (fetch API with no-cors)
+- Google Apps Script (doPost web app)
+- Google Sheets (as a lightweight database)
+```
