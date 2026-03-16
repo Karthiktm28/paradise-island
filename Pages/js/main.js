@@ -255,7 +255,6 @@ function closeChatModal() {
   document.getElementById('chatSuccess').style.display = 'none';
   document.getElementById('chatMsg').value = '';
 }
-
 function sendChatMsg() {
   const msg = document.getElementById('chatMsg').value.trim();
   if (!msg) {
@@ -269,15 +268,13 @@ function sendChatMsg() {
 
   fetch('https://script.google.com/macros/s/AKfycbzY1IPduff45fBkQUlEQDoOuWYfZ4oYpV7I9_tWbL7Mi-yaqrIY6x7E-RSyJbMH-kl7/exec', {
     method: 'POST',
+    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ message: msg })
   })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === 'success') {
-      document.getElementById('chatSuccess').style.display = 'block';
-      document.getElementById('chatMsg').value = '';
-    }
+  .then(() => {
+    document.getElementById('chatSuccess').style.display = 'block';
+    document.getElementById('chatMsg').value = '';
   })
   .catch(err => {
     alert('Something went wrong. Please try again.');
