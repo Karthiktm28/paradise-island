@@ -266,12 +266,11 @@ function sendChatMsg() {
   document.getElementById('chatSendBtn').disabled = true;
   document.getElementById('chatSendBtn').innerText = 'Sending...';
 
-  fetch('https://script.google.com/macros/s/AKfycbzY1IPduff45fBkQUlEQDoOuWYfZ4oYpV7I9_tWbL7Mi-yaqrIY6x7E-RSyJbMH-kl7/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message: msg })
-  })
+fetch('https://7y0wt49o02.execute-api.us-east-1.amazonaws.com/', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ message: msg })
+})
   .then(() => {
     document.getElementById('chatSuccess').style.display = 'block';
     document.getElementById('chatMsg').value = '';
