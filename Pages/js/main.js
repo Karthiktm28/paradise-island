@@ -266,21 +266,24 @@ function sendChatMsg() {
   document.getElementById('chatSendBtn').disabled = true;
   document.getElementById('chatSendBtn').innerText = 'Sending...';
 
-fetch('https://7y0wt49o02.execute-api.us-east-1.amazonaws.com/', {
+fetch('https://7y0wt49o02.execute-api.us-east-1.amazonaws.com/prod/contact', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ message: msg })
 })
-  .then(() => {
+.then(res => res.json())
+.then(data => {
+  if (data.status === 'success') {
     document.getElementById('chatSuccess').style.display = 'block';
     document.getElementById('chatMsg').value = '';
-  })
-  .catch(err => {
-    alert('Something went wrong. Please try again.');
-    console.error('Chat error:', err);
-  })
-  .finally(() => {
-    document.getElementById('chatSendBtn').disabled = false;
-    document.getElementById('chatSendBtn').innerText = 'Send message';
-  });
+  }
+})
+.catch(err => {
+  alert('Something went wrong. Please try again.');
+  console.error('Chat error:', err);
+})
+.finally(() => {
+  document.getElementById('chatSendBtn').disabled = false;
+  document.getElementById('chatSendBtn').innerText = 'Send message';
+});
 }
