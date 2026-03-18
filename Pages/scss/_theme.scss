@@ -1,69 +1,86 @@
-// 
-// _theme.scss — Dark Mode Overrides
-// 
+// _theme.scss — Light & Dark Mode
 
+// --- Light mode base ---
+body {
+  background: #f0f7ff;
+  color: #0d2d5e;
+}
+
+h1, h2, h3 { color: #0d2d5e; }
+p { color: #3a6090; }
+
+// --- Dark mode overrides ---
 body.dark-mode {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #071428;
+  color: #c8e0ff;
 
-  h1, h2, h3 { color: #f1f5f9; }
+  h1, h2, h3 { color: #e2f0ff; }
+  p { color: #8ab4d8; }
 
-  p { color: #94a3b8; }
-
-  .navbar {
-    background: #020617 !important;
-  }
+  .navbar { background: #040e1e !important; }
 
   .about-nav {
-    background: rgba(15, 23, 42, 0.92);
-    .logo, .nav-links a { color: #e2e8f0; }
-    .nav-links a:hover  { color: #00c6ff; background: rgba(0,198,255,0.1); }
-    .nav-links a.active { color: #00c6ff; background: rgba(0,198,255,0.12); }
+    background: rgba(7, 20, 40, 0.95);
+    .logo, .nav-links a { color: #c8e0ff; }
+    .nav-links a:hover  { color: #00c8ff; background: rgba(0,200,255,0.08); }
+    .nav-links a.active { color: #00c8ff; background: rgba(0,200,255,0.12); }
   }
 
   .booking-container,
   .activities .card,
   .popup-content,
   #info-flex > div {
-    background: #1e293b;
-    color: #e2e8f0;
+    background: #0d2040;
+    color: #c8e0ff;
+    border: 1px solid #1a3a6e;
   }
 
   .form-group input {
-    background: #0f172a;
-    border-color: #334155;
-    color: #e2e8f0;
+    background: #071428;
+    border-color: #1a3a6e;
+    color: #c8e0ff;
 
-    &:focus { border-color: #00c6ff; background: #1e293b; }
-    &:disabled { background: #0f172a; }
+    &:focus   { border-color: #00c8ff; background: #0d2040; }
+    &:disabled { background: #071428; }
   }
 
-  .form-group label { color: #cbd5e1; }
+  .form-group label { color: #7eb8f7; }
 
   .price-display {
-    background: #1e293b;
-    border-left-color: #00c6ff;
-    p { color: #e2e8f0; }
+    background: #0d2040;
+    border-left-color: #00c8ff;
+    p { color: #c8e0ff; }
   }
 
   .expense-table {
-    background: #1e293b;
-    tbody td { color: #cbd5e1; border-bottom-color: #334155; }
-    tbody tr:hover td { background: #263548; }
+    background: #0d2040;
+    tbody td { color: #8ab4d8; border-bottom-color: #1a3a6e; }
+    tbody tr:hover td { background: #0f2850; }
   }
 
   .feature-box {
-    background: rgba(255,255,255,0.05);
-    p { color: #e2e8f0; }
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1a3a6e;
+    p { color: #c8e0ff; }
   }
 
   .activity-filter button {
-    background: #334155;
-    color: #e2e8f0;
-    &:hover, &.active { background: #0072ff; color: #fff; }
+    background: #0d2040;
+    color: #c8e0ff;
+    border: 1px solid #1a3a6e;
+    &:hover, &.active { background: #1a7fff; color: #fff; border-color: #1a7fff; }
   }
 
-  .footer { background: #020617; }
+  .footer       { background: #040e1e; }
+  .about-footer { background: #0d2040; color: #8ab4d8; }
 
-  .about-footer { background: #1e293b; color: #94a3b8; }
+  .chat-box     { background: #0d2040; }
+  .chat-body textarea {
+    background: #071428;
+    border-color: #1a3a6e;
+    color: #c8e0ff;
+  }
+
+  section { background: #071428; }
+  section:nth-child(even) { background: #0a1a34; }
 }
