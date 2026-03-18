@@ -79,3 +79,5 @@ a {
   color: inherit;
   text-decoration: none;
 }
+section { background: #f0f7ff; }
+section:nth-child(even) { background: #e0f0ff; }
