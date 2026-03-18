@@ -1,34 +1,34 @@
-// 
-// _variables.scss — Design Tokens
-// 
-
-// --- Colors ---
-$primary:   #0072ff;
-$secondary: #00c6ff;
-$accent:    #20c997;
-$dark:      #1e1e1e;
-$light:     #ffffff;
-$text:      #2b2b2b;
-$bg:        #f4f9fc;
+// --- Light mode colors ---
+$primary:        #0057cc;
+$secondary:      #00a8e8;
+$accent:         #c9a84c;
+$dark:           #0d2d5e;
+$light:          #ffffff;
+$text:           #0d2d5e;
+$text-muted:     #3a6090;
+$bg:             #f0f7ff;
+$bg-alt:         #e0f0ff;
+$card-bg:        #ffffff;
+$border-color:   #c8dff7;
 
 // --- Gradients ---
-$gradient-brand:  linear-gradient(135deg, $secondary, $primary);
-$gradient-dark:   linear-gradient(135deg, #111827, #1f2937);
-$gradient-hero:   linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+$gradient-brand: linear-gradient(135deg, $secondary, $primary);
+$gradient-dark:  linear-gradient(135deg, #071428, #0d2040);
+$gradient-hero:  linear-gradient(135deg, #071428, #0d2040, #071428);
 
 // --- Sizing ---
 $radius-sm:  10px;
 $radius:     18px;
 $radius-lg:  30px;
 
-$padding:         1rem;
-$section-space:   4rem;
+$padding:        1rem;
+$section-space:  4rem;
 
 // --- Typography ---
 $heading-font: "Segoe UI", sans-serif;
 $body-font:    system-ui, Arial, sans-serif;
 
 // --- Shadows ---
-$shadow-sm: 0 4px 10px  rgba(0, 0, 0, 0.08);
-$shadow-md: 0 10px 25px rgba(0, 0, 0, 0.12);
-$shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.18);
+$shadow-sm: 0 4px 10px  rgba(0, 87, 204, 0.08);
+$shadow-md: 0 10px 25px rgba(0, 87, 204, 0.12);
+$shadow-lg: 0 20px 40px rgba(0, 87, 204, 0.18);

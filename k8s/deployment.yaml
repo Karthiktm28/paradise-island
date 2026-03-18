@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paradise-island
+  labels:
+    app: paradise-island
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: paradise-island
+  template:
+    metadata:
+      labels:
+        app: paradise-island
+    spec:
+      containers:
+      - name: paradise-island
+        image: karthiktm/paradise-island:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
