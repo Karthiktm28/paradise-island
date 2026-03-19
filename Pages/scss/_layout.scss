@@ -53,10 +53,11 @@
   align-items: center;
   padding: 0 8%;
   color: white;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  background: linear-gradient(rgba(0, 10, 30, 0.72), rgba(0, 10, 30, 0.65)),
               url("https://karthiktm28.github.io/paradise-island/Multimedia/tropical-beach.jpg") center/cover no-repeat;
 
   &__content { max-width: 650px; }
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 
   h1 {
     font-size: clamp(2.2rem, 5vw, 3.5rem);
@@ -76,6 +77,10 @@
     flex-wrap: wrap;
     margin-top: 30px;
   }
+  .hero p {
+  color: #e2f0ff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
 }
 
 // --- About Hero ---
