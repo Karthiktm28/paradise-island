@@ -77,9 +77,13 @@
     flex-wrap: wrap;
     margin-top: 30px;
   }
-  .hero p {
-  color: #e2f0ff;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+.hero p {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9),
+               0 1px 4px rgba(0, 0, 0, 0.8);
+  opacity: 1 !important;
 }
 }
 
