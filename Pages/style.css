@@ -131,13 +131,11 @@ section:nth-child(even) {
   align-items: center;
   padding: 0 8%;
   color: white;
-  background: linear-gradient(rgba(0, 10, 30, 0.72), rgba(0, 10, 30, 0.65)), url("https://karthiktm28.github.io/paradise-island/Multimedia/tropical-beach.jpg") center/cover no-repeat;
-}
-.hero__content {
-  max-width: 650px;
-}
-.hero {
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(rgba(0, 10, 30, 0.72), rgba(0, 10, 30, 0.65)), url("/Multimedia/tropical-beach.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0a2540;
 }
 .hero h1 {
   font-size: clamp(2.8rem, 5.5vw, 4.5rem);
@@ -163,6 +161,9 @@ section:nth-child(even) {
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
   opacity: 1 !important;
+}
+.hero .hero h1 span {
+  color: #00c6ff;
 }
 
 .about-hero {
