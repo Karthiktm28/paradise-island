@@ -145,6 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "Multimedia/hero-beach.jpg",
       "Multimedia/snorkeling-tour.jpg"
     ];
+    // Preload all slider images
+images.forEach(src => { new Image().src = src; });
     let index = 0;
     setInterval(() => {
       index = (index + 1) % images.length;
