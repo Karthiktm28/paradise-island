@@ -80,11 +80,11 @@ a {
   text-decoration: none;
 }
 
-section {
+section:not(.hero) {
   background: #f0f7ff;
 }
 
-section:nth-child(even) {
+section:nth-child(even):not(.hero) {
   background: #e0f0ff;
 }
 
