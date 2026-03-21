@@ -141,9 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const hero = document.querySelector(".hero");
   if (hero) {
     const images = [
-      "../Multimedia/tropical-beach.jpg",
-      "../Multimedia/hero-beach.jpg",
-      "../Multimedia/snorkeling-tour.jpg"
+      "Multimedia/tropical-beach.jpg",
+      "Multimedia/hero-beach.jpg",
+      "Multimedia/snorkeling-tour.jpg"
     ];
     let index = 0;
     setInterval(() => {
