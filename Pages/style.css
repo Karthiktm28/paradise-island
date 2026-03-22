@@ -238,7 +238,9 @@ section:nth-child(even):not(.hero) {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #00a8e8, #0057cc);
+  background: linear-gradient(135deg, #0072ff, #00c6ff, #0047ab) !important;
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
 }
 
 .features-section {
