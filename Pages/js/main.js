@@ -211,23 +211,63 @@ images.forEach(src => { new Image().src = src; });
   }
 
 
-  /*
-     11. BOOKING PRICE CALCULATOR
-  */
-  const peopleInput = document.getElementById("people");
-  const daysInput   = document.getElementById("days");
-  const totalPrice  = document.getElementById("totalPrice");
+/* 11. BOOKING PRICE CALCULATOR + DATE PICKER */
+const checkinInput  = document.getElementById("checkin");
+const checkoutInput = document.getElementById("checkout");
+const peopleInput   = document.getElementById("people");
+const daysInput     = document.getElementById("days");
+const totalPrice    = document.getElementById("totalPrice");
 
-  if (peopleInput && daysInput && totalPrice) {
-    const PRICE_PER_DAY = 120;
-    const calculate = () => {
-      const people = Math.max(0, +peopleInput.value || 0);
-      const days   = Math.max(0, +daysInput.value   || 0);
-      totalPrice.textContent = "$" + (people * days * PRICE_PER_DAY).toLocaleString();
-    };
-    peopleInput.addEventListener("input", calculate);
-    daysInput.addEventListener("input", calculate);
+// Set minimum date to today
+if (checkinInput && checkoutInput) {
+  const today = new Date().toISOString().split("T")[0];
+  checkinInput.min  = today;
+  checkoutInput.min = today;
+
+  // When check-in changes, update check-out minimum and recalculate
+  checkinInput.addEventListener("change", () => {
+    checkoutInput.min = checkinInput.value;
+
+    // If checkout is before checkin, reset it
+    if (checkoutInput.value && checkoutInput.value < checkinInput.value) {
+      checkoutInput.value = "";
+      if (daysInput) daysInput.value = "";
+    }
+    calculateDays();
+  });
+
+  checkoutInput.addEventListener("change", () => {
+    calculateDays();
+  });
+}
+
+function calculateDays() {
+  if (!checkinInput?.value || !checkoutInput?.value) return;
+  const start = new Date(checkinInput.value);
+  const end   = new Date(checkoutInput.value);
+  const diff  = Math.round((end - start) / (1000 * 60 * 60 * 24));
+  if (daysInput && diff > 0) {
+    daysInput.value = diff;
+    calculatePrice();
   }
+}
+
+if (peopleInput && daysInput && totalPrice) {
+  const PRICE_PER_DAY = 120;
+  const calculatePrice = () => {
+    const people = Math.max(0, +peopleInput.value || 0);
+    const days   = Math.max(0, +daysInput.value   || 0);
+    totalPrice.textContent = "$" + (people * days * PRICE_PER_DAY).toLocaleString();
+  };
+  // Make calculatePrice accessible outside this block
+  window._calcPrice = calculatePrice;
+  peopleInput.addEventListener("input", calculatePrice);
+  daysInput.addEventListener("input", calculatePrice);
+}
+
+function calculatePrice() {
+  if (window._calcPrice) window._calcPrice();
+}
 
 
   /*
