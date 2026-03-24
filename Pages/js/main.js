@@ -329,3 +329,60 @@ fetch('https://7y0wt49o02.execute-api.us-east-1.amazonaws.com/prod/contact', {
   document.getElementById('chatSendBtn').innerText = 'Send message';
 });
 }
+/* 16. LIVE WEATHER WIDGET */
+async function loadWeather() {
+  const icon    = document.getElementById("weatherIcon");
+  const temp    = document.getElementById("weatherTemp");
+  const desc    = document.getElementById("weatherDesc");
+  const humidity = document.getElementById("weatherHumidity");
+  const wind    = document.getElementById("weatherWind");
+  const feels   = document.getElementById("weatherFeels");
+
+  if (!temp) return; // Only run on pages with the widget
+
+  try {
+    // Open-Meteo free API — no API key needed
+    // Nassau, Bahamas coordinates: 25.0480° N, 77.3554° W
+    const geoRes  = await fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=25.048&longitude=-77.355&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,weather_code&wind_speed_unit=kmh&timezone=America%2FNew_York"
+    );
+    const data    = await geoRes.json();
+    const current = data.current;
+
+    const weatherIcons = {
+      0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️",
+      45: "🌫️", 48: "🌫️",
+      51: "🌦️", 53: "🌦️", 55: "🌧️",
+      61: "🌧️", 63: "🌧️", 65: "🌧️",
+      71: "🌨️", 73: "🌨️", 75: "❄️",
+      80: "🌦️", 81: "🌧️", 82: "⛈️",
+      95: "⛈️", 96: "⛈️", 99: "⛈️"
+    };
+
+    const weatherDescs = {
+      0: "Clear Sky", 1: "Mainly Clear", 2: "Partly Cloudy", 3: "Overcast",
+      45: "Foggy", 48: "Icy Fog",
+      51: "Light Drizzle", 53: "Drizzle", 55: "Heavy Drizzle",
+      61: "Light Rain", 63: "Rain", 65: "Heavy Rain",
+      71: "Light Snow", 73: "Snow", 75: "Heavy Snow",
+      80: "Rain Showers", 81: "Heavy Showers", 82: "Violent Showers",
+      95: "Thunderstorm", 96: "Thunderstorm", 99: "Heavy Thunderstorm"
+    };
+
+    const code = current.weather_code;
+
+    if (icon)     icon.textContent     = weatherIcons[code]  || "🌡️";
+    if (temp)     temp.textContent     = Math.round(current.temperature_2m) + "°C";
+    if (desc)     desc.textContent     = weatherDescs[code]  || "Clear";
+    if (humidity) humidity.textContent = current.relative_humidity_2m + "%";
+    if (wind)     wind.textContent     = Math.round(current.wind_speed_10m) + " km/h";
+    if (feels)    feels.textContent    = Math.round(current.apparent_temperature) + "°C";
+
+  } catch (err) {
+    if (temp) temp.textContent = "N/A";
+    if (desc) desc.textContent = "Weather unavailable";
+    console.error("Weather fetch failed:", err);
+  }
+}
+
+loadWeather();
