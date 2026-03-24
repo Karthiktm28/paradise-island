@@ -428,3 +428,228 @@
   font-size: 14px;
   font-weight: 500;
 }
+// STAR RATINGS
+.card-body {
+  padding: 16px;
+  text-align: center;
+
+  h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #1e293b;
+  }
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.star {
+  font-size: 1.4rem;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.15s;
+
+  &.filled,
+  &:hover { color: #f59e0b; }
+
+  &:hover { transform: scale(1.2); }
+}
+
+// IMAGE LIGHTBOX
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(6px);
+
+  &.show {
+    display: flex;
+    animation: lightboxIn 0.3s ease both;
+  }
+}
+
+@keyframes lightboxIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    animation: lightboxImgIn 0.3s ease both;
+  }
+}
+
+@keyframes lightboxImgIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+#lightbox-caption {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 14px;
+  font-size: 1rem;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover { background: rgba(255, 255, 255, 0.3); }
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover { background: rgba(255, 255, 255, 0.3); }
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+// COOKIE BANNER
+.cookie-banner {
+  position: fixed;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(700px, 94vw);
+  background: #1e293b;
+  color: #e2e8f0;
+  border-radius: 16px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  z-index: 9990;
+  transition: bottom 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  &.show { bottom: 24px; }
+}
+
+.cookie-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+
+  span { font-size: 1.8rem; flex-shrink: 0; }
+
+  p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+  }
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  .btn { padding: 10px 24px; font-size: 0.9rem; }
+}
+
+.cookie-decline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+  }
+}
+
+// DATE PICKER
+input[type="date"] {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #dde1e7;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:focus {
+    border-color: #0072ff;
+    box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.12);
+    outline: none;
+    background: #fff;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 1; }
+  }
+
+  &[readonly] {
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 600px) {
+  .cookie-banner   { flex-direction: column; text-align: center; }
+  .cookie-content  { flex-direction: column; }
+  .cookie-actions  { width: 100%; justify-content: center; }
+}

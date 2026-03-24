@@ -84,3 +84,20 @@ body.dark-mode {
   section { background: #071428; }
   section:nth-child(even) { background: #0a1a34; }
 }
+// Dark mode for new features
+body.dark-mode {
+  .card-body h4  { color: #e2e8f0; }
+  .star          { color: #4b5563; }
+  .star.filled   { color: #f59e0b; }
+
+  input[type="date"] {
+    background: #0f172a;
+    border-color: #334155;
+    color: #e2e8f0;
+    color-scheme: dark;
+
+    &:focus { background: #1e293b; border-color: #00c6ff; }
+  }
+
+  .weather-section { background: linear-gradient(135deg, #020617, #0a1628); }
+}
