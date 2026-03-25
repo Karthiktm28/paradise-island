@@ -80,11 +80,11 @@ a {
   text-decoration: none;
 }
 
-section:not(.hero) {
+section:not(.hero):not(.glass-section):not(.weather-section) {
   background: #f0f7ff;
 }
 
-section:nth-child(even):not(.hero) {
+section:nth-child(even):not(.hero):not(.glass-section):not(.weather-section) {
   background: #e0f0ff;
 }
 
