@@ -101,3 +101,16 @@ body.dark-mode {
 
   .weather-section { background: linear-gradient(135deg, #020617, #0a1628); }
 }
+body.dark-mode {
+  input[type="date"] {
+    background: #0f172a;
+    border-color: #334155;
+    color: #e2e8f0;
+    color-scheme: dark;
+
+    &:focus {
+      background: #1e293b;
+      border-color: #00c6ff;
+    }
+  }
+}
