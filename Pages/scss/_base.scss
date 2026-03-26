@@ -86,3 +86,10 @@ section:not(.hero):not(.glass-section):not(.weather-section) {
 section:nth-child(even):not(.hero):not(.glass-section):not(.weather-section) {
   background: #e0f0ff;
 }
+section:not(.hero):not(.glass-section):not(.weather-section):not(.converter-section) {
+  background: #f0f7ff;
+}
+
+section:nth-child(even):not(.hero):not(.glass-section):not(.weather-section):not(.converter-section) {
+  background: #e0f0ff;
+}
