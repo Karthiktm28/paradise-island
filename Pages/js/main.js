@@ -386,3 +386,48 @@ async function loadWeather() {
 }
 
 loadWeather();
+/* 17. CURRENCY CONVERTER */
+async function loadCurrencyConverter() {
+  const amountInput = document.getElementById("convertAmount");
+  const currencySelect = document.getElementById("convertCurrency");
+  const output = document.getElementById("converterOutput");
+  const rateEl = document.getElementById("converterRate");
+
+  if (!amountInput) return;
+
+  let rates = {};
+
+  try {
+    // Open exchange rates — free tier, no API key needed for latest
+    const res  = await fetch("https://open.er-api.com/v6/latest/USD");
+    const data = await res.json();
+    rates = data.rates;
+
+    const convert = () => {
+      const amount   = parseFloat(amountInput.value) || 0;
+      const currency = currencySelect.value;
+      const rate     = rates[currency];
+
+      if (!rate) return;
+
+      const result = (amount * rate).toFixed(2);
+      const symbol = new Intl.NumberFormat("en", {
+        style: "currency", currency
+      }).format(result);
+
+      output.textContent = symbol;
+      rateEl.textContent = `1 USD = ${rate.toFixed(4)} ${currency}`;
+    };
+
+    amountInput.addEventListener("input", convert);
+    currencySelect.addEventListener("change", convert);
+    convert(); // Run once on load
+
+  } catch (err) {
+    if (output) output.textContent = "Unavailable";
+    if (rateEl)  rateEl.textContent  = "Could not fetch live rates";
+    console.error("Currency fetch failed:", err);
+  }
+}
+
+loadCurrencyConverter();

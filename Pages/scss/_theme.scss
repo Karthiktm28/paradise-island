@@ -114,3 +114,44 @@ body.dark-mode {
     }
   }
 }
+// Dark mode for packages and converter
+body.dark-mode {
+  .package-card {
+    background: #1e293b;
+  }
+
+  .package-features li {
+    color: #cbd5e1;
+    border-bottom-color: #334155;
+  }
+
+  .converter-section {
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+  }
+
+  .converter-widget {
+    background: #1e293b;
+  }
+
+  .converter-group {
+    label { color: #cbd5e1; }
+
+    input,
+    select {
+      background: #0f172a;
+      border-color: #334155;
+      color: #e2e8f0;
+
+      &:focus {
+        background: #1e293b;
+        border-color: #00c6ff;
+      }
+    }
+  }
+
+  .converter-result {
+    background: #0f172a;
+
+    p { color: #00c6ff; }
+  }
+}
