@@ -223,14 +223,15 @@ background-color: #0a2540;
   flex-wrap: wrap;
   margin: 20px 0;
 
-  > div {
-    flex: 1;
-    min-width: 240px;
-    padding: 20px;
-    background: #fff;
-    border-radius: v.$radius;
-    box-shadow: v.$shadow-sm;
-  }
+  flex: 1;
+  min-width: 240px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #00c6ff;
+
+  p { color: #334155; }
 }
 
 // --- Back to Top link ---
