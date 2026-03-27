@@ -20,7 +20,7 @@ h1, h2, h3 {
   font-family: "Segoe UI", sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: #0f172a;
+  color: #0a1628;
 }
 
 h1 {
@@ -51,7 +51,7 @@ h2::after {
 
 p {
   font-size: 1.05rem;
-  color: rgba(121, 147, 162, 0.95);
+  color: #334155;
   margin-bottom: 18px;
 }
 
