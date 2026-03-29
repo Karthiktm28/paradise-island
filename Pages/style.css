@@ -1752,4 +1752,21 @@ body.dark-mode .converter-result p {
   color: #00c6ff;
 }
 
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+  color: #f1f5f9;
+}
+body.dark-mode p {
+  color: #cbd5e1;
+}
+body.dark-mode ul li,
+body.dark-mode ol li {
+  color: #cbd5e1;
+}
+body.dark-mode dt {
+  color: #f1f5f9;
+}
+body.dark-mode dd {
+  color: #cbd5e1;
+}
+
 /*# sourceMappingURL=style.css.map */

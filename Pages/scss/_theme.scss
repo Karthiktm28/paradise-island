@@ -155,3 +155,11 @@ body.dark-mode {
     p { color: #00c6ff; }
   }
 }
+body.dark-mode {
+  h1, h2, h3 { color: #f1f5f9; }
+  p           { color: #cbd5e1; }
+  ul li,
+  ol li       { color: #cbd5e1; }
+  dt          { color: #f1f5f9; }
+  dd          { color: #cbd5e1; }
+}
