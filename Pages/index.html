@@ -43,11 +43,18 @@
         </div>
       </div>
     </nav>
-
-    <!-- Hero Section -->
+<!-- Hero Section with Video Background -->
     <section class="hero">
+      <!-- Video Background -->
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="Multimedia/Pradaise_Island_video.mp4" type="video/mp4">
+      </video>
+      <!-- Overlay -->
+      <div class="hero-overlay"></div>
+      <!-- Content -->
       <div class="hero__content">
         <h1>Welcome to <span>Paradise</span> Island</h1>
+        <p>Discover crystal-clear waters, golden beaches, and unforgettable sunsets.</p>
         <div class="hero__buttons">
           <a href="Booking.html" class="btn">Book Your Escape</a>
           <a href="Tableofexpens.html" class="btn btn-outline">Expense Details</a>
@@ -394,7 +401,10 @@
     </footer>
 
   </div><!-- end .container-custom -->
-
+<!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top-btn" aria-label="Back to top">
+    ↑
+  </button>
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
