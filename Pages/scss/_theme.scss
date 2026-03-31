@@ -163,3 +163,33 @@ body.dark-mode {
   dt          { color: #f1f5f9; }
   dd          { color: #cbd5e1; }
 }
+// Dark mode for search and calendar
+body.dark-mode {
+  .search-bar {
+    background: #1e293b;
+    border-color: #334155;
+
+    input {
+      color: #e2e8f0;
+      &::placeholder { color: #475569; }
+    }
+  }
+
+  .calendar-widget { background: #1e293b; }
+
+  .calendar-header h3 { color: #f1f5f9; }
+
+  .cal-nav {
+    background: #334155;
+    color: #e2e8f0;
+  }
+
+  .cal-day-name { color: #94a3b8; }
+
+  .cal-day.past { color: #334155; }
+
+  .cal-selected-info {
+    background: #0f172a;
+    color: #00c6ff;
+  }
+}
