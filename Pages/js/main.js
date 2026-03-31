@@ -449,3 +449,130 @@ if (backToTopBtn) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+/* 20. ACTIVITY SEARCH BAR */
+const searchInput = document.getElementById("activitySearch");
+const searchClear = document.getElementById("searchClear");
+const searchCards = document.querySelectorAll(".activities .card");
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase().trim();
+
+    // Show/hide clear button
+    searchClear.style.display = query ? "flex" : "none";
+
+    searchCards.forEach(card => {
+      const title = card.querySelector("h4")?.textContent.toLowerCase() || "";
+      const category = card.dataset.category?.toLowerCase() || "";
+      const match = title.includes(query) || category.includes(query);
+
+      card.style.display = match ? "block" : "none";
+    });
+
+    // Reset filter buttons when searching
+    if (query) {
+      document.querySelectorAll("[data-filter]").forEach(btn => {
+        btn.classList.remove("active");
+      });
+    }
+  });
+
+  searchClear?.addEventListener("click", () => {
+    searchInput.value = "";
+    searchClear.style.display = "none";
+    searchCards.forEach(card => card.style.display = "block");
+    document.querySelector("[data-filter='all']")?.classList.add("active");
+    searchInput.focus();
+  });
+}
+
+
+/* 21. AVAILABILITY CALENDAR */
+const bookedDates = [
+  "2026-04-05", "2026-04-06", "2026-04-07",
+  "2026-04-12", "2026-04-13",
+  "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23",
+  "2026-05-01", "2026-05-02",
+  "2026-05-10", "2026-05-11", "2026-05-12",
+];
+
+let calDate     = new Date();
+let selectedDate = null;
+
+function renderCalendar() {
+  const title   = document.getElementById("calTitle");
+  const daysEl  = document.getElementById("calDays");
+  const infoEl  = document.getElementById("calSelected");
+
+  if (!daysEl) return;
+
+  const year  = calDate.getFullYear();
+  const month = calDate.getMonth();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  title.textContent = calDate.toLocaleString("default", { month: "long", year: "numeric" });
+
+  const firstDay   = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  daysEl.innerHTML = "";
+
+  // Empty cells before first day
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement("div");
+    empty.classList.add("cal-day", "empty");
+    daysEl.appendChild(empty);
+  }
+
+  // Day cells
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+    const cellDate = new Date(year, month, d);
+    const isPast   = cellDate < today;
+    const isBooked = bookedDates.includes(dateStr);
+    const isSelected = selectedDate === dateStr;
+
+    const cell = document.createElement("div");
+    cell.classList.add("cal-day");
+    cell.textContent = d;
+
+    if (isPast)     cell.classList.add("past");
+    else if (isBooked) cell.classList.add("booked");
+    else            cell.classList.add("available");
+
+    if (isSelected) cell.classList.add("selected");
+
+    if (!isPast && !isBooked) {
+      cell.addEventListener("click", () => {
+        selectedDate = dateStr;
+        if (infoEl) {
+          infoEl.textContent = `✅ Selected: ${cellDate.toLocaleDateString("en-IE", {
+            weekday: "long", day: "numeric", month: "long", year: "numeric"
+          })}`;
+        }
+        // Sync with booking form date pickers
+        const checkin = document.getElementById("checkin");
+        if (checkin) checkin.value = dateStr;
+        renderCalendar();
+      });
+    }
+
+    daysEl.appendChild(cell);
+  }
+}
+
+const calPrev = document.getElementById("calPrev");
+const calNext = document.getElementById("calNext");
+
+if (calPrev && calNext) {
+  calPrev.addEventListener("click", () => {
+    calDate.setMonth(calDate.getMonth() - 1);
+    renderCalendar();
+  });
+  calNext.addEventListener("click", () => {
+    calDate.setMonth(calDate.getMonth() + 1);
+    renderCalendar();
+  });
+  renderCalendar();
+}
