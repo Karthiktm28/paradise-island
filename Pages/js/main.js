@@ -431,10 +431,12 @@ async function loadCurrencyConverter() {
 }
 
 loadCurrencyConverter();
-/* 19. BACK TO TOP BUTTON */
+/* 19. BACK TO TOP BUTTON  */
 const backToTopBtn = document.getElementById("backToTop");
 
 if (backToTopBtn) {
+
+  
   window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
       backToTopBtn.classList.add("show");

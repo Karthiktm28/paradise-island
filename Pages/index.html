@@ -171,6 +171,40 @@
 
   </div>
 </section>
+<!-- Availability Calendar -->
+    <section class="calendar-section reveal">
+      <h2>Check Availability</h2>
+      <p>Select your preferred dates — green dates are available, red are booked</p>
+
+      <div class="calendar-widget">
+        <div class="calendar-header">
+          <button id="calPrev" class="cal-nav" aria-label="Previous month">&#8249;</button>
+          <h3 id="calTitle">Month Year</h3>
+          <button id="calNext" class="cal-nav" aria-label="Next month">&#8250;</button>
+        </div>
+
+        <div class="calendar-grid">
+          <div class="cal-day-name">Sun</div>
+          <div class="cal-day-name">Mon</div>
+          <div class="cal-day-name">Tue</div>
+          <div class="cal-day-name">Wed</div>
+          <div class="cal-day-name">Thu</div>
+          <div class="cal-day-name">Fri</div>
+          <div class="cal-day-name">Sat</div>
+        </div>
+
+        <div id="calDays" class="calendar-days"></div>
+
+        <div class="calendar-legend">
+          <span class="legend-item"><span class="legend-dot available"></span> Available</span>
+          <span class="legend-item"><span class="legend-dot booked"></span> Booked</span>
+          <span class="legend-item"><span class="legend-dot selected"></span> Selected</span>
+          <span class="legend-item"><span class="legend-dot past"></span> Past</span>
+        </div>
+
+        <div id="calSelected" class="cal-selected-info">No date selected</div>
+      </div>
+    </section>
 <!-- Currency Converter -->
 <section class="converter-section reveal">
   <h2>Price Converter</h2>
@@ -278,6 +312,15 @@
     </section>
 
     <!-- Top Activities -->
+           <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="activitySearch"
+          placeholder="Search activities..."
+          autocomplete="off">
+        <button id="searchClear" class="search-clear" aria-label="Clear search">✕</button>
+      </div>
     <section>
       <h2>Top Activities</h2>
 <div class="activities reveal">
