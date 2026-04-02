@@ -388,17 +388,18 @@ async function loadWeather() {
 loadWeather();
 /* 17. CURRENCY CONVERTER */
 async function loadCurrencyConverter() {
-  const amountInput = document.getElementById("convertAmount");
+  const spinner      = document.getElementById("converterSpinner");
+  const content      = document.getElementById("converterContent");
+  const amountInput  = document.getElementById("convertAmount");
   const currencySelect = document.getElementById("convertCurrency");
-  const output = document.getElementById("converterOutput");
-  const rateEl = document.getElementById("converterRate");
+  const output       = document.getElementById("converterOutput");
+  const rateEl       = document.getElementById("converterRate");
 
   if (!amountInput) return;
 
   let rates = {};
 
   try {
-    // Open exchange rates — free tier, no API key needed for latest
     const res  = await fetch("https://open.er-api.com/v6/latest/USD");
     const data = await res.json();
     rates = data.rates;
@@ -407,48 +408,36 @@ async function loadCurrencyConverter() {
       const amount   = parseFloat(amountInput.value) || 0;
       const currency = currencySelect.value;
       const rate     = rates[currency];
-
       if (!rate) return;
-
       const result = (amount * rate).toFixed(2);
       const symbol = new Intl.NumberFormat("en", {
         style: "currency", currency
       }).format(result);
-
       output.textContent = symbol;
       rateEl.textContent = `1 USD = ${rate.toFixed(4)} ${currency}`;
     };
 
     amountInput.addEventListener("input", convert);
     currencySelect.addEventListener("change", convert);
-    convert(); // Run once on load
+    convert();
+
+    // Hide spinner, show content
+    if (spinner) spinner.style.display = "none";
+    if (content) content.style.display = "block";
+
+    showToast("✅ Live exchange rates loaded!", "success");
 
   } catch (err) {
-    if (output) output.textContent = "Unavailable";
+    if (spinner) spinner.style.display = "none";
+    if (output)  output.textContent  = "Unavailable";
     if (rateEl)  rateEl.textContent  = "Could not fetch live rates";
+    if (content) content.style.display = "block";
+    showToast("⚠️ Could not load exchange rates", "error");
     console.error("Currency fetch failed:", err);
   }
 }
 
 loadCurrencyConverter();
-/* 19. BACK TO TOP BUTTON  */
-const backToTopBtn = document.getElementById("backToTop");
-
-if (backToTopBtn) {
-
-  
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
-    }
-  }, { passive: true });
-
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
 /* 20. ACTIVITY SEARCH BAR */
 const searchInput = document.getElementById("activitySearch");
 const searchClear = document.getElementById("searchClear");
@@ -487,7 +476,7 @@ if (searchInput) {
 }
 
 
-/* 21. AVAILABILITY CALENDAR */
+/* 18. AVAILABILITY CALENDAR */
 const bookedDates = [
   "2026-04-05", "2026-04-06", "2026-04-07",
   "2026-04-12", "2026-04-13",
@@ -575,4 +564,24 @@ if (calPrev && calNext) {
     renderCalendar();
   });
   renderCalendar();
+}
+/* 19. TOAST NOTIFICATIONS */
+function showToast(message, type = "success") {
+  const container = document.getElementById("toastContainer");
+  if (!container) return;
+
+  const toast = document.createElement("div");
+  toast.classList.add("toast", `toast-${type}`);
+  toast.textContent = message;
+
+  container.appendChild(toast);
+
+  // Trigger animation
+  requestAnimationFrame(() => toast.classList.add("show"));
+
+  // Auto remove after 3.5 seconds
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 400);
+  }, 3500);
 }

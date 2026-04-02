@@ -219,8 +219,18 @@
   <h2>Price Converter</h2>
   <p>See our package prices in your local currency</p>
 
-  <div class="converter-widget">
+<div class="converter-widget">
+
+    <!-- Spinner -->
+    <div id="converterSpinner" class="spinner-wrapper">
+      <div class="spinner"></div>
+      <p>Fetching live rates...</p>
+    </div>
+
+    <!-- Content (hidden until loaded) -->
+    <div id="converterContent" style="display:none">
     <div class="converter-row">
+      </div>
       <div class="converter-group">
         <label for="convertAmount">Amount (USD $)</label>
         <input type="number" id="convertAmount" value="150" min="1" placeholder="Enter amount">
@@ -486,5 +496,7 @@
     </div>
   </div>
 </div>
+<!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 </body>
 </html>
