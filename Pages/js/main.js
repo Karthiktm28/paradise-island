@@ -585,3 +585,21 @@ function showToast(message, type = "success") {
     setTimeout(() => toast.remove(), 400);
   }, 3500);
 }
+/* 23. ANIMATED PROGRESS BARS */
+const progressFills = document.querySelectorAll(".progress-fill");
+
+if (progressFills.length) {
+  const animateBars = () => {
+    progressFills.forEach(bar => {
+      const rect = bar.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        const width = bar.getAttribute("data-width");
+        bar.style.width = width + "%";
+        bar.classList.add("animated");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", animateBars, { passive: true });
+  animateBars(); // Run once on load
+}
