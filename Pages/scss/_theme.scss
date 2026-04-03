@@ -193,3 +193,13 @@ body.dark-mode {
     color: #00c6ff;
   }
 }
+// Dark mode for progress bars and waves
+body.dark-mode {
+  .rating-label span { color: #cbd5e1; }
+
+  .progress-bar { background: #334155; }
+
+  .wave-divider svg path { fill: #0f172a !important; }
+
+  .ratings-section { background: #0f172a; }
+}
