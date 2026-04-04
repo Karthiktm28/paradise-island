@@ -603,3 +603,40 @@ if (progressFills.length) {
   window.addEventListener("scroll", animateBars, { passive: true });
   animateBars(); // Run once on load
 }
+/* 24. LANGUAGE SWITCHER */
+const langBtns = document.querySelectorAll(".lang-btn");
+
+if (langBtns.length) {
+  // Restore saved language
+  const savedLang = localStorage.getItem("lang") || "en";
+  applyLanguage(savedLang);
+  document.querySelector(`[data-lang="${savedLang}"]`)?.classList.add("active");
+
+  langBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const lang = btn.dataset.lang;
+
+      // Update active button
+      langBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Save preference
+      localStorage.setItem("lang", lang);
+
+      // Apply translations
+      applyLanguage(lang);
+
+      showToast(lang === "es" ? "🌐 Idioma: Español" : "🌐 Language: English", "info");
+    });
+  });
+}
+
+function applyLanguage(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.textContent = text;
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+}

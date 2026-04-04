@@ -18,11 +18,16 @@
   <div class="container-custom">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="About.html">Paradise Island</a>
 
         <div class="d-flex align-items-center gap-2">
+          <!-- Language Switcher -->
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+            <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+          </div>
           <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,12 +57,19 @@
       <!-- Overlay -->
       <div class="hero-overlay"></div>
       <!-- Content -->
-      <div class="hero__content">
+<div class="hero__content">
         <h1>Welcome to <span>Paradise</span> Island</h1>
-        <p>Discover crystal-clear waters, golden beaches, and unforgettable sunsets.</p>
+        <p data-en="Discover crystal-clear waters, golden beaches, and unforgettable sunsets."
+           data-es="Descubre aguas cristalinas, playas doradas e inolvidables atardeceres.">
+          Discover crystal-clear waters, golden beaches, and unforgettable sunsets.
+        </p>
         <div class="hero__buttons">
-          <a href="Booking.html" class="btn">Book Your Escape</a>
-          <a href="Tableofexpens.html" class="btn btn-outline">Expense Details</a>
+          <a href="Booking.html" class="btn"
+             data-en="Book Your Escape"
+             data-es="Reserva Tu Escapada">Book Your Escape</a>
+          <a href="Tableofexpens.html" class="btn btn-outline"
+             data-en="Expense Details"
+             data-es="Detalles de Gastos">Expense Details</a>
         </div>
       </div>
     </section>
@@ -105,7 +117,9 @@
             <small>Feels Like</small>
           </div>
         </div>
-        <p class="weather-location">📍 Nassau, Bahamas</p>
+<p class="weather-location"
+           data-en="📍 Nassau, Bahamas"
+           data-es="📍 Nassau, Bahamas">📍 Nassau, Bahamas</p>
       </div>
     </section>
     </section><!-- end weather -->
@@ -118,9 +132,13 @@
     </div>
     <!-- Why Visit Section -->
     <section class="glass-section">
-      <div class="glass-card text-center">
-        <h2>Why Visit Paradise Island?</h2>
-        <p>Experience crystal waters, luxury resorts, vibrant culture, and unforgettable sunsets — all in one breathtaking destination.</p>
+<div class="glass-card text-center">
+        <h2 data-en="Why Visit Paradise Island?"
+            data-es="¿Por Qué Visitar Paradise Island?">Why Visit Paradise Island?</h2>
+        <p data-en="Experience crystal waters, luxury resorts, vibrant culture, and unforgettable sunsets — all in one breathtaking destination."
+           data-es="Vive aguas cristalinas, resorts de lujo, cultura vibrante e inolvidables atardeceres en un destino impresionante.">
+          Experience crystal waters, luxury resorts, vibrant culture, and unforgettable sunsets — all in one breathtaking destination.
+        </p>
       </div>
     </section>
     </section><!-- end glass -->
@@ -134,7 +152,11 @@
 <!-- Room Packages Section -->
 <section class="packages-section reveal">
   <h2>Choose Your Stay</h2>
-  <p class="packages-subtitle">Select the perfect package for your paradise getaway</p>
+<p class="packages-subtitle"
+     data-en="Select the perfect package for your paradise getaway"
+     data-es="Selecciona el paquete perfecto para tu escapada al paraíso">
+    Select the perfect package for your paradise getaway
+  </p>
 
   <div class="packages-grid">
 
@@ -288,7 +310,11 @@
       <small id="converterRate">Enter an amount to convert</small>
     </div>
 
-    <p class="converter-note">💡 Rates updated live via Open Exchange Rates</p>
+    <p class="converter-note"
+           data-en="💡 Rates updated live via Open Exchange Rates"
+           data-es="💡 Tasas actualizadas en vivo">
+          💡 Rates updated live via Open Exchange Rates
+        </p>
   </div>
 </section>
 
@@ -552,7 +578,10 @@
     <footer class="footer">
       <div class="footer-container">
         <h3>Paradise Island</h3>
-        <p>Plan your dream vacation today</p>
+        <p data-en="Plan your dream vacation today"
+           data-es="Planifica tus vacaciones soñadas hoy">
+          Plan your dream vacation today
+        </p>
         <div class="footer-links">
           <a href="About.html">Home</a>
           <a href="Booking.html">Booking</a>
