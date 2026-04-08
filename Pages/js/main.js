@@ -584,3 +584,35 @@ function applyLanguage(lang) {
   // Update html lang attribute
   document.documentElement.lang = lang;
 }
+/* 25. SOCIAL MEDIA SHARE — COPY LINK */
+const copyLinkBtn  = document.getElementById("copyLinkBtn");
+const copyLinkText = document.getElementById("copyLinkText");
+
+if (copyLinkBtn) {
+  copyLinkBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      copyLinkText.textContent = "✅ Copied!";
+      showToast("🔗 Link copied to clipboard!", "success");
+
+      setTimeout(() => {
+        copyLinkText.textContent = "Copy Link";
+      }, 2500);
+
+    } catch (err) {
+      // Fallback for older browsers
+      const input = document.createElement("input");
+      input.value = window.location.href;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      copyLinkText.textContent = "✅ Copied!";
+      showToast("🔗 Link copied to clipboard!", "success");
+
+      setTimeout(() => {
+        copyLinkText.textContent = "Copy Link";
+      }, 2500);
+    }
+  });
+}
